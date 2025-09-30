@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "degree": "Master's in Data Science & AI",
+    "institution": "École Polytechnique",
+    "period": "2020 - 2022",
+    "description": "Specialized in machine learning, deep learning, and statistical modeling. Thesis on optimization of deep learning models for edge computing applications.",
+    "grade": "Distinction"
+  },
+  {
+    "id": 2,
+    "degree": "Bachelor's in Mathematics & Statistics",
+    "institution": "Université Pierre et Marie Curie",
+    "period": "2017 - 2020",
+    "description": "Strong foundation in mathematical modeling, statistical analysis, and computational methods. Focus on applied mathematics and probability theory.",
+    "grade": "First Class Honours"
+  },
+  {
+    "id": 3,
+    "degree": "Advanced Mathematics Baccalaureate",
+    "institution": "Lycée Henri IV",
+    "period": "2017",
+    "description": "Scientific baccalaureate with specialization in mathematics and computer science. Excellent grounding in analytical thinking and problem-solving.",
+    "grade": "Distinction"
+  }
+]

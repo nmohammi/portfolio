@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "AI Search Engine",
+    "description": "Advanced semantic search engine with vector embeddings and LLM integration for enhanced query understanding and results ranking.",
+    "technologies": ["Python", "FastAPI", "Pinecone", "OpenAI", "Docker"],
+    "githubUrl": "https://github.com/username/ai-search-engine",
+    "demoUrl": "https://search.example.com",
+    "image": "/api/placeholder/600/400"
+  },
+  {
+    "id": 2,
+    "title": "Dynamic Pricing Algorithm",
+    "description": "Machine learning-powered pricing optimization system for e-commerce, incorporating market data and demand forecasting.",
+    "technologies": ["Python", "Scikit-learn", "Pandas", "Redis", "PostgreSQL"],
+    "githubUrl": "https://github.com/username/pricing-algorithm",
+    "demoUrl": "https://pricing.example.com",
+    "image": "/api/placeholder/600/400"
+  },
+  {
+    "id": 3,
+    "title": "Analytics Pipeline",
+    "description": "Cloud-native data pipeline for processing financial KPIs with real-time monitoring and automated reporting.",
+    "technologies": ["Python", "Apache Airflow", "AWS", "Kubernetes", "Grafana"],
+    "githubUrl": "https://github.com/username/analytics-pipeline",
+    "demoUrl": "https://analytics.example.com",
+    "image": "/api/placeholder/600/400"
+  },
+  {
+    "id": 4,
+    "title": "Multi-tenant AI API",
+    "description": "Scalable API platform providing NLP services (embeddings, semantic search) to multiple organizations with tenant isolation.",
+    "technologies": ["FastAPI", "Docker", "Kubernetes", "PostgreSQL", "Redis"],
+    "githubUrl": "https://github.com/username/multitenant-ai-api",
+    "demoUrl": "https://api.example.com",
+    "image": "/api/placeholder/600/400"
+  }
+]

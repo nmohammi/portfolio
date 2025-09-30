@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1,
+    "title": "Building Scalable AI APIs with FastAPI and Kubernetes",
+    "excerpt": "Learn how to design and deploy production-ready AI APIs that can handle thousands of requests while maintaining low latency and high availability.",
+    "readTime": "8 min read",
+    "date": "2024-01-15",
+    "category": "AI Engineering",
+    "tags": ["FastAPI", "Kubernetes", "AI", "Scalability"],
+    "url": "https://blog.example.com/scalable-ai-apis",
+    "image": "/api/placeholder/400/200"
+  },
+  {
+    "id": 2,
+    "title": "Vector Embeddings: From Theory to Production",
+    "excerpt": "A comprehensive guide to implementing vector embeddings in real-world applications, covering everything from model selection to performance optimization.",
+    "readTime": "12 min read",
+    "date": "2024-01-08",
+    "category": "Machine Learning",
+    "tags": ["Embeddings", "NLP", "Vector DB", "Production"],
+    "url": "https://blog.example.com/vector-embeddings-guide",
+    "image": "/api/placeholder/400/200"
+  },
+  {
+    "id": 3,
+    "title": "Data Pipeline Optimization: Lessons from Banking",
+    "excerpt": "Real-world insights from industrializing analytics pipelines at Société Générale, including performance tuning and monitoring strategies.",
+    "readTime": "10 min read",
+    "date": "2023-12-20",
+    "category": "Data Engineering",
+    "tags": ["Data Pipeline", "Performance", "Monitoring", "Banking"],
+    "url": "https://blog.example.com/data-pipeline-optimization",
+    "image": "/api/placeholder/400/200"
+  },
+  {
+    "id": 4,
+    "title": "The Future of AI in Healthcare: A Technical Perspective",
+    "excerpt": "Exploring how AI technologies can transform healthcare delivery, with practical examples from real hospital implementations.",
+    "readTime": "15 min read",
+    "date": "2023-12-05",
+    "category": "AI Applications",
+    "tags": ["Healthcare", "AI", "Computer Vision", "Medical Tech"],
+    "url": "https://blog.example.com/ai-healthcare-future",
+    "image": "/api/placeholder/400/200"
+  }
+]

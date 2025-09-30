@@ -2,7 +2,7 @@
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://isendark1.github.io/portfolio",
+  "homepage": "https://nmohammi.github.io/portfolio",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

@@ -1,6 +1,7 @@
 'use client';
 
 import { Section } from '@/components/Section';
+import Image from 'next/image';
 import { Card, ProjectCard } from '@/components/Card';
 import { ArticleCard } from '@/components/ArticleCard';
 import projectsData from '@/data/projects.json';
@@ -85,11 +86,13 @@ export default function Home() {
                   <div className="w-80 h-[32rem] sm:w-[24rem] sm:h-[36rem] lg:w-[28rem] lg:h-[40rem] relative">
                     <div className="absolute inset-0 bg-gradient-to-br from-blue-100 to-blue-200 rounded-3xl transform rotate-3"></div>
                     <div className="relative w-full h-full bg-white rounded-3xl shadow-2xl overflow-hidden border-4 border-white">
-                      <img 
-                        src="/pdp.jpg" 
-                        alt="Nasrallah MOHAMMI" 
-                        className="w-full h-full object-cover object-center"
-                        style={{ display: 'block' }}
+                      <Image
+                        src="/pdp.jpg"
+                        alt="Nasrallah MOHAMMI"
+                        fill
+                        sizes="(min-width: 1024px) 28rem, (min-width: 640px) 24rem, 20rem"
+                        className="object-cover object-center"
+                        priority
                       />
                     </div>
                   </div>

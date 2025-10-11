@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://nmohammi.github.io/portfolio/sitemap.xml

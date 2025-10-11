@@ -87,7 +87,7 @@ export default function Home() {
                     <div className="absolute inset-0 bg-gradient-to-br from-blue-100 to-blue-200 rounded-3xl transform rotate-3"></div>
                     <div className="relative w-full h-full bg-white rounded-3xl shadow-2xl overflow-hidden border-4 border-white">
                       <Image
-                        src="/portfolio/pdp.jpg"
+                        src="/pdp.jpg"
                         alt="Nasrallah MOHAMMI"
                         width={400}
                         height={500}

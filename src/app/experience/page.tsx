@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react'
+import Image from 'next/image'
 import { Section } from '@/components/Section'
 import { TestimonialCard } from '@/components/TestimonialCard'
 import experienceData from '@/data/experience.json'
@@ -9,6 +10,21 @@ import Link from 'next/link'
 
 export default function ExperiencePage() {
   const [selectedExperience, setSelectedExperience] = useState<number | null>(null)
+
+  const companyLogoMap: Record<string, string> = {
+    'Opteamis': '/opteamis.png',
+    'Société Générale': '/societegenerale.png',
+    'CHU Metz': '/freelance.png',
+    'ENSEA': '/etis.png',
+    'ETIS': '/etis.png',
+  }
+
+  function getCompanyLogo(company: string): string | undefined {
+    for (const [key, path] of Object.entries(companyLogoMap)) {
+      if (company.includes(key)) return path;
+    }
+    return undefined;
+  }
 
   const formatDetailedDescription = (text: string) => {
     return text.split('\n').map((line, index) => {
@@ -73,7 +89,19 @@ export default function ExperiencePage() {
                 {/* Position & Company */}
                 <h3 className="text-xl font-bold text-gray-900 mb-2" dangerouslySetInnerHTML={{ __html: exp.position }}>
                 </h3>
-                <p className="text-primary-600 font-semibold text-lg mb-4">{exp.company}</p>
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-lg overflow-hidden bg-white border border-gray-100 flex items-center justify-center">
+                    {getCompanyLogo(exp.company) ? (
+                      <Image src={getCompanyLogo(exp.company)!} alt={`${exp.company} logo`} width={40} height={40} className="object-contain" />
+                    ) : (
+                      <svg className="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4h16v16H4z"/></svg>
+                    )}
+                  </div>
+                  <p className="text-primary-600 font-semibold text-lg">{exp.company}</p>
+                  {exp.company.includes('CHU Metz') && (
+                    <span className="ml-2 px-2 py-1 text-xs rounded-full bg-purple-100 text-purple-700 border border-purple-200">Freelance</span>
+                  )}
+                </div>
                 
                 {/* Short Description */}
                 <div className="text-gray-600 leading-relaxed mb-6">

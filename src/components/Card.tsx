@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 interface CardProps {
   children: React.ReactNode;
@@ -37,13 +38,25 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   demoUrl,
   image
 }) => {
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+  const resolvedImage = image
+    ? (image.startsWith('http') ? image : `${basePath}${image.startsWith('/') ? image : `/${image}`}`)
+    : undefined;
+
+  const visibleTech = technologies.slice(0, 6);
+  const remainingTechCount = Math.max(technologies.length - visibleTech.length, 0);
   return (
     <Card hover className="h-full">
-      {image && (
-        <div className="mb-4">
-          <div className="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center">
-            <span className="text-gray-500">Image du projet</span>
-          </div>
+      {resolvedImage && (
+        <div className="mb-4 relative w-full aspect-[16/9] overflow-hidden rounded-lg border border-gray-200 dark:border-gray-800">
+          <Image
+            src={resolvedImage}
+            alt={title}
+            fill
+            sizes="(min-width: 1024px) 50vw, 100vw"
+            className="object-cover"
+            priority={false}
+          />
         </div>
       )}
       
@@ -52,14 +65,17 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
       <p className="text-gray-600 mb-4">{description}</p>
       
       <div className="flex flex-wrap gap-2 mb-4">
-        {technologies.map((tech, index) => (
+        {visibleTech.map((tech, index) => (
           <span 
             key={index}
-            className="px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm font-medium"
+            className="px-3 py-1 bg-primary-50 text-primary-700 dark:bg-primary-900/20 dark:text-primary-300 rounded-full text-xs font-medium"
           >
             {tech}
           </span>
         ))}
+        {remainingTechCount > 0 && (
+          <span className="px-3 py-1 bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-200 rounded-full text-xs font-medium">+{remainingTechCount}</span>
+        )}
       </div>
       
       <div className="flex gap-3">

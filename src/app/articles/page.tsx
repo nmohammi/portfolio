@@ -50,35 +50,9 @@ export default function ArticlesPage() {
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">AI Engineering</h3>
               <p className="text-gray-600 text-sm mb-4">Building and scaling AI systems in production</p>
-              <span className="text-primary-600 font-medium text-sm">3 articles</span>
-            </div>
-            
-            <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200 text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-700 rounded-2xl flex items-center justify-center text-white font-bold text-xl mx-auto mb-4">
-                ML
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Machine Learning</h3>
-              <p className="text-gray-600 text-sm mb-4">Deep dives into ML algorithms and techniques</p>
-              <span className="text-primary-600 font-medium text-sm">2 articles</span>
-            </div>
-            
-            <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200 text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl flex items-center justify-center text-white font-bold text-xl mx-auto mb-4">
-                DE
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Data Engineering</h3>
-              <p className="text-gray-600 text-sm mb-4">Pipelines, optimization, and infrastructure</p>
-              <span className="text-primary-600 font-medium text-sm">2 articles</span>
-            </div>
-            
-            <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200 text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-700 rounded-2xl flex items-center justify-center text-white font-bold text-xl mx-auto mb-4">
-                APP
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Applications</h3>
-              <p className="text-gray-600 text-sm mb-4">Real-world AI applications across industries</p>
               <span className="text-primary-600 font-medium text-sm">1 article</span>
             </div>
+            
           </div>
         </div>
       </Section>

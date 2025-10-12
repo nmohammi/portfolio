@@ -1,6 +1,7 @@
 'use client';
 
 import { Section } from '@/components/Section'
+import Image from 'next/image'
 import educationData from '@/data/education.json'
 import Link from 'next/link'
 
@@ -12,7 +13,7 @@ export default function EducationPage() {
         <div className="container text-center">
           <div className="max-w-4xl mx-auto">
             <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6">
-              Education & <span className="text-primary-600">Certifications</span>
+              Certifications & <span className="text-primary-600">Education</span>
             </h1>
             <div className="w-24 h-1 bg-gradient-to-r from-primary-500 to-primary-700 mx-auto mb-8 rounded-full"></div>
             <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-2xl mx-auto">
@@ -22,42 +23,65 @@ export default function EducationPage() {
         </div>
       </section>
 
+      {/* Certifications grid */}
+      <Section 
+        title="Professional Certifications" 
+        subtitle="Verified credentials, issued by recognized organizations"
+        className="bg-gradient-to-br from-gray-50 to-white"
+      >
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Placeholder cards - add items to a data file later */}
+          <div className="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm hover:shadow-md transition">
+            <div className="flex items-start gap-3">
+              <div className="w-10 h-10 rounded-lg bg-white border border-gray-200 flex items-center justify-center">
+                <svg className="w-6 h-6 text-primary-600" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
+              </div>
+              <div>
+                <h3 className="font-semibold text-gray-900">Certification name</h3>
+                <p className="text-sm text-gray-600">Issuer • YYYY</p>
+                <a href="#" className="text-sm text-primary-600 hover:text-primary-700">View credential →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </Section>
+
       {/* Education Timeline */}
       <Section 
         title="Academic Journey" 
         subtitle="From mathematics to data science and AI"
         className="bg-white"
       >
-        <div className="max-w-6xl mx-auto">
-          <div className="space-y-12">
-            {educationData.map((edu, index) => (
-              <div key={edu.id} className="group">
-                <div className="bg-gradient-to-r from-white to-gray-50 rounded-3xl p-10 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:-translate-y-1 transform">
-                  <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8">
-                    <div className="flex-1">
-                      <div className="flex items-start gap-6 mb-6">
-                        <div className="flex-shrink-0">
-                          <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-primary-700 rounded-3xl flex items-center justify-center text-white font-bold text-xl">
-                            {index + 1}
-                          </div>
+        <div className="max-w-5xl mx-auto relative">
+          <div className="absolute left-6 top-0 bottom-0 w-1 bg-gradient-to-b from-primary-200 via-primary-400 to-primary-200" />
+          <div className="space-y-10">
+            {educationData.map((edu) => (
+              <div key={edu.id} className="relative flex items-start">
+                {/* Dot with logo centered on rail */}
+                <div className="absolute left-6 -translate-x-1/2 transform mt-1 w-12 h-12 rounded-full bg-white border-2 border-primary-300 shadow flex items-center justify-center">
+                  {edu.logo ? (
+                    <Image src={edu.logo} alt={`${edu.institution} logo`} width={40} height={40} className="object-contain" />
+                  ) : null}
+                </div>
+                {/* Card */}
+                <div className="ml-20 w-full">
+                  <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-1">{edu.degree}</h3>
+                    <div className="flex items-center gap-2 mb-1">
+                      {edu.logo && (
+                        <div className="w-7 h-7 rounded-md overflow-hidden bg-white border border-gray-100 flex items-center justify-center">
+                          <Image src={edu.logo} alt={`${edu.institution} logo`} width={22} height={22} className="object-contain" />
                         </div>
-                        <div className="flex-1">
-                          <h3 className="text-3xl font-bold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors">
-                            {edu.degree}
-                          </h3>
-                          <p className="text-primary-600 font-semibold text-xl mb-2">{edu.institution}</p>
-                          <p className="text-gray-500 font-medium text-lg mb-4">{edu.period}</p>
-                          {edu.grade && (
-                            <span className="inline-block px-6 py-3 bg-gradient-to-r from-green-100 to-green-200 text-green-700 rounded-full text-lg font-semibold border border-green-300">
-                              {edu.grade}
-                            </span>
-                          )}
-                        </div>
-                      </div>
-                      
-                      <p className="text-gray-600 leading-relaxed text-lg">
-                        {edu.description}
-                      </p>
+                      )}
+                      <p className="text-primary-600 font-medium">{edu.institution}</p>
+                    </div>
+                    <p className="text-gray-500 text-sm mb-3">{edu.period}</p>
+                    <div className="text-gray-700 whitespace-pre-line leading-relaxed">
+                      {String(edu.description)
+                        .split('•')
+                        .filter(Boolean)
+                        .map((seg, i) => `• ${seg.trim()}`)
+                        .join('\n')}
                     </div>
                   </div>
                 </div>

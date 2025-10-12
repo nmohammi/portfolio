@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 interface ArticleCardProps {
   article: {
@@ -19,6 +20,17 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({ article, featured = fa
   return (
     <div className="group">
       <div className={`bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 border border-gray-200 hover:border-primary-300 h-full flex flex-col ${featured ? 'lg:p-8' : ''}`}>
+        {article.image && (
+          <div className="mb-4 -mt-2 rounded-lg overflow-hidden">
+            <Image
+              src={article.image}
+              alt={article.title}
+              width={800}
+              height={450}
+              className={`w-full object-cover ${featured ? 'h-56' : 'h-40'}`}
+            />
+          </div>
+        )}
         <div className="flex items-start justify-between mb-4">
           <div className="flex-1">
             <div className="flex items-center gap-2 mb-3">

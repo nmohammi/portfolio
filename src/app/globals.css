@@ -8,7 +8,17 @@
   }
   
   body {
-    @apply bg-gray-50 text-gray-900;
+    @apply bg-gray-50 text-gray-900 dark:bg-gray-950 dark:text-gray-100;
+  }
+
+  /* Accessible focus outlines */
+  :focus-visible {
+    outline: none;
+    /* Tailwind ring via CSS vars-like output */
+    box-shadow: 0 0 0 2px theme('colors.primary.500'), 0 0 0 4px theme('colors.white');
+  }
+  .dark :focus-visible {
+    box-shadow: 0 0 0 2px theme('colors.primary.500'), 0 0 0 4px theme('colors.gray.950');
   }
   
   /* Custom scrollbar */

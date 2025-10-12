@@ -9,6 +9,22 @@ import experienceData from '@/data/experience.json';
 import educationData from '@/data/education.json';
 import articlesData from '@/data/articles.json';
 import freelanceData from '@/data/freelance.json';
+import { Database, BrainCircuit, Cloud } from 'lucide-react';
+
+const companyLogoMap: Record<string, string> = {
+  'Opteamis': '/opteamis.png',
+  'Société Générale': '/societegenerale.png',
+  'CHU Metz': '/freelance.png',
+  'ENSEA': '/etis.png',
+  'ETIS': '/etis.png',
+};
+
+function getCompanyLogo(company: string): string | undefined {
+  for (const [key, path] of Object.entries(companyLogoMap)) {
+    if (company.includes(key)) return path;
+  }
+  return undefined;
+}
 
 export default function Home() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -71,12 +87,12 @@ export default function Home() {
           <div className="max-w-6xl mx-auto">
             {/* Main Title */}
             <div className="text-center mb-12">
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl text-gray-800 leading-tight font-bold mb-4">
-                Welcome to my portfolio, I'm <span className="bg-gradient-to-r from-primary-600 to-primary-800 bg-clip-text text-transparent">Nasrallah Mohammi</span>
+              <h1 className="font-heading text-3xl sm:text-4xl lg:text-5xl text-gray-900 dark:text-gray-100 leading-tight font-bold mb-4">
+                GenAI and Data Analytics Engineer
               </h1>
-              <h2 className="text-lg sm:text-xl lg:text-2xl text-gray-600 font-bold">
-                GenAI <span className="font-serif">&</span> Data Analytics Engineer
-              </h2>
+              <p className="text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              I like building things that actually work. Most of what I do sits at the intersection of GenAI, data engineering, and real-world problem solving — designing tools that make sense, run fast, and help others make better decisions. Below are some projects I’ve worked on and what I’ve learned along the way.
+              </p>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -128,39 +144,62 @@ export default function Home() {
             <div className="max-w-6xl mx-auto mt-32">
               <div className="space-y-8">
                 {/* Impact Stats */}
-                <div className="bg-gradient-to-r from-primary-50 to-blue-50 p-8 rounded-2xl border border-primary-100 shadow-sm">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">🚀 Impact in Numbers</h3>
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div className="relative overflow-hidden p-8 rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 shadow-sm">
+                  <div className="pointer-events-none absolute -inset-1 bg-gradient-to-r from-primary-500/10 via-primary-500/0 to-primary-500/10" aria-hidden="true" />
+                  <h3 className="relative text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6 text-center">Impact</h3>
+                  <div className="relative grid grid-cols-2 md:grid-cols-4 gap-6">
                     <div className="text-center">
-                      <div className="text-3xl font-bold text-primary-600 mb-2">300+</div>
-                      <div className="text-sm text-gray-600">Tables in Data Lake</div>
+                      <div className="mx-auto mb-2 h-12 w-12 rounded-2xl bg-primary-50 dark:bg-primary-900/20 flex items-center justify-center text-primary-700 dark:text-primary-300">
+                        {/* calendar check */}
+                        <svg className="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M7 2a1 1 0 0 0-1 1v1H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1V3a1 1 0 1 0-2 0v1H8V3A1 1 0 0 0 7 2zm0 6h10v2H7V8zm3.5 6.5 1.8 1.8 3.2-3.2a1 1 0 1 1 1.4 1.4l-3.9 3.9a1 1 0 0 1-1.4 0l-2.5-2.5a1 1 0 1 1 1.4-1.4z"/>
+                        </svg>
+                      </div>
+                      <div className="text-4xl font-extrabold text-primary-600">2+</div>
+                      <div className="text-sm text-gray-600 dark:text-gray-400">Years building AI systems</div>
                     </div>
                     <div className="text-center">
-                      <div className="text-3xl font-bold text-primary-600 mb-2">200K+</div>
-                      <div className="text-sm text-gray-600">CVs Processed</div>
+                      <div className="mx-auto mb-2 h-12 w-12 rounded-2xl bg-primary-50 dark:bg-primary-900/20 flex items-center justify-center text-primary-700 dark:text-primary-300">
+                        {/* check circle */}
+                        <svg className="h-6 w-6" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm-1 14.2-3.5-3.5a1 1 0 1 1 1.4-1.4l2.1 2.1 4.7-4.7a1 1 0 1 1 1.4 1.4L12 16.2z"/></svg>
+                      </div>
+                      <div className="text-4xl font-extrabold text-primary-600">20+</div>
+                      <div className="text-sm text-gray-600 dark:text-gray-400">Projects delivered</div>
                     </div>
                     <div className="text-center">
-                      <div className="text-3xl font-bold text-primary-600 mb-2">97.23%</div>
-                      <div className="text-sm text-gray-600">Model Accuracy</div>
+                      <div className="mx-auto mb-2 h-12 w-12 rounded-2xl bg-primary-50 dark:bg-primary-900/20 flex items-center justify-center text-primary-700 dark:text-primary-300">
+                        {/* buildings */}
+                        <svg className="h-6 w-6" viewBox="0 0 24 24" fill="currentColor"><path d="M3 21V7a2 2 0 0 1 2-2h4V3h6v4h4a2 2 0 0 1 2 2v12h-5v-4H8v4H3zm7-10H7v2h3v-2zm0 4H7v2h3v-2zm7-4h-3v2h3v-2zm0 4h-3v2h3v-2z"/></svg>
+                      </div>
+                      <div className="text-4xl font-extrabold text-primary-600">5+</div>
+                      <div className="text-sm text-gray-600 dark:text-gray-400">Industries served</div>
                     </div>
                     <div className="text-center">
-                      <div className="text-3xl font-bold text-primary-600 mb-2">120+</div>
-                      <div className="text-sm text-gray-600">Countries Served</div>
+                      <div className="mx-auto mb-2 h-12 w-12 rounded-2xl bg-primary-50 dark:bg-primary-900/20 flex items-center justify-center text-primary-700 dark:text-primary-300">
+                        {/* users */}
+                        <svg className="h-6 w-6" viewBox="0 0 24 24" fill="currentColor"><path d="M16 11a4 4 0 1 0-4-4 4 4 0 0 0 4 4zM8 13a4 4 0 1 0-4-4 4 4 0 0 0 4 4zm8 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4zM8 17c-2.67 0-8 1.34-8 4v2h6v-2c0-1.05.41-2.04 1.12-2.89A9.13 9.13 0 0 1 8 17z"/></svg>
+                      </div>
+                      <div className="text-4xl font-extrabold text-primary-600">50+</div>
+                      <div className="text-sm text-gray-600 dark:text-gray-400">Teams supported</div>
                     </div>
                   </div>
                 </div>
+    
+              
 
                 {/* Experience Highlights */}
                 <div className="bg-white p-8 rounded-2xl border border-gray-200 shadow-sm">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">💼 Diverse Experience Across Industries</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Industry Experience</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="group">
                       <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-xl border border-blue-100 hover:shadow-lg transition-all duration-300 hover:border-blue-300 h-full">
                         <div className="flex items-start space-x-4">
-                          <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                            <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                            </svg>
+                          <div className="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0 overflow-hidden bg-white border border-blue-100">
+                            {getCompanyLogo('Opteamis') ? (
+                              <Image src={getCompanyLogo('Opteamis')!} alt="Opteamis logo" width={56} height={56} className="object-contain" />
+                            ) : (
+                              <svg className="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                            )}
                           </div>
                           <div className="flex-1">
                             <h3 className="text-lg font-bold text-gray-900 mb-2">🚀 French Tech 120 Scale-up</h3>
@@ -174,10 +213,12 @@ export default function Home() {
                     <div className="group">
                       <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-xl border border-green-100 hover:shadow-lg transition-all duration-300 hover:border-green-300 h-full">
                         <div className="flex items-start space-x-4">
-                          <div className="w-14 h-14 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                            <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                            </svg>
+                          <div className="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0 overflow-hidden bg-white border border-green-100">
+                            {getCompanyLogo('Société Générale') ? (
+                              <Image src={getCompanyLogo('Société Générale')!} alt="Société Générale logo" width={56} height={56} className="object-contain" />
+                            ) : (
+                              <svg className="w-7 h-7 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                            )}
                           </div>
                           <div className="flex-1">
                             <h3 className="text-lg font-bold text-gray-900 mb-2">🏦 Banking & Finance</h3>
@@ -191,10 +232,12 @@ export default function Home() {
                     <div className="group">
                       <div className="bg-gradient-to-br from-purple-50 to-violet-50 p-6 rounded-xl border border-purple-100 hover:shadow-lg transition-all duration-300 hover:border-purple-300 h-full">
                         <div className="flex items-start space-x-4">
-                          <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-violet-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                            <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9" />
-                            </svg>
+                          <div className="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0 overflow-hidden bg-white border border-purple-100">
+                            {getCompanyLogo('CHU Metz') ? (
+                              <Image src={getCompanyLogo('CHU Metz')!} alt="Freelance logo" width={56} height={56} className="object-contain" />
+                            ) : (
+                              <svg className="w-7 h-7 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9"/></svg>
+                            )}
                           </div>
                           <div className="flex-1">
                             <h3 className="text-lg font-bold text-gray-900 mb-2">🏥 Healthcare & Insurance</h3>
@@ -208,10 +251,12 @@ export default function Home() {
                     <div className="group">
                       <div className="bg-gradient-to-br from-orange-50 to-amber-50 p-6 rounded-xl border border-orange-100 hover:shadow-lg transition-all duration-300 hover:border-orange-300 h-full">
                         <div className="flex items-start space-x-4">
-                          <div className="w-14 h-14 bg-gradient-to-br from-orange-500 to-amber-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                            <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                            </svg>
+                          <div className="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0 overflow-hidden bg-white border border-orange-100">
+                            {getCompanyLogo('ENSEA') ? (
+                              <Image src={getCompanyLogo('ENSEA')!} alt="ENSEA logo" width={56} height={56} className="object-contain" />
+                            ) : (
+                              <svg className="w-7 h-7 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+                            )}
                           </div>
                           <div className="flex-1">
                             <h3 className="text-lg font-bold text-gray-900 mb-2">🔬 Research & Innovation</h3>
@@ -226,54 +271,44 @@ export default function Home() {
 
                 {/* Skills & Expertise */}
                 <div className="bg-gradient-to-r from-gray-50 to-slate-50 p-8 rounded-2xl border border-gray-200 shadow-sm">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">🛠️ Core Expertise</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">What I Ship</h3>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    {/* 1️⃣ Data & Analytics Platforms */}
                     <div className="text-center group">
                       <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                        </svg>
+                        <Database className="w-8 h-8 text-white" strokeWidth={2} />
                       </div>
-                      <h4 className="text-lg font-bold text-gray-900 mb-2">Data Engineering</h4>
-                      <p className="text-sm text-gray-600">dbt, Airbyte, BigQuery, Snowflake, ETL pipelines, data warehousing</p>
+                      <h4 className="text-lg font-bold text-gray-900 mb-2">Data & Analytics Platforms</h4>
+                      <p className="text-sm text-gray-700 mb-1">Modern ELT/ETL pipelines, data contracts, and observability-first analytics. Outcome: versioned, governed, and trusted datasets for AI and decision workflows.</p>
+                      <p className="text-xs text-gray-500">Stack: dbt · Airbyte/Fivetran · BigQuery/Snowflake · Dagster/Airflow · Great Expectations · DataHub · Feast</p>
+                      <p className="text-xs text-gray-500 mt-1">Add‑ons: data lineage, contracts, and feature stores for model‑ready pipelines.</p>
                     </div>
+
+                    {/* 2️⃣ Applied GenAI Systems */}
                     <div className="text-center group">
                       <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                        </svg>
+                        <BrainCircuit className="w-8 h-8 text-white" strokeWidth={2} />
                       </div>
-                      <h4 className="text-lg font-bold text-gray-900 mb-2">AI & Machine Learning</h4>
-                      <p className="text-sm text-gray-600">CNNs, PyTorch, TensorFlow, Vector DBs, NLP, Computer Vision</p>
+                      <h4 className="text-lg font-bold text-gray-900 mb-2">Applied GenAI Systems</h4>
+                      <p className="text-sm text-gray-700 mb-1">RAG pipelines, fine‑tuned LLMs, and Model Context Protocol (MCP) integrations. Outcome: grounded, explainable AI with low latency and predictable cost.</p>
+                      <p className="text-xs text-gray-500">Stack: PyTorch · OpenAI/VLLM · Qdrant/Weaviate · LangChain/LlamaIndex · MCP · Traceloop · Evals</p>
+                      <p className="text-xs text-gray-500 mt-1">Add‑ons: observability, evaluation harnesses, and prompt versioning for production.</p>
                     </div>
+
+                    {/* 3️⃣ Cloud, MLOps & Delivery */}
                     <div className="text-center group">
                       <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-teal-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4" />
-                        </svg>
+                        <Cloud className="w-8 h-8 text-white" strokeWidth={2} />
                       </div>
-                      <h4 className="text-lg font-bold text-gray-900 mb-2">Cloud & DevOps</h4>
-                      <p className="text-sm text-gray-600">GCP, Azure, Docker, Kubernetes, CI/CD, APIs, Microservices</p>
+                      <h4 className="text-lg font-bold text-gray-900 mb-2">Cloud, MLOps & Delivery</h4>
+                      <p className="text-sm text-gray-700 mb-1">Containerized AI workloads with CI/CD, IaC, and scalable serving. Outcome: repeatable deploys, secure environments, and clear rollback plans.</p>
+                      <p className="text-xs text-gray-500">Stack: Docker · Kubernetes · Terraform · GCP/Azure · FastAPI · MLflow · ArgoCD · Grafana/Prometheus</p>
+                      <p className="text-xs text-gray-500 mt-1">Add‑ons: autoscaling GenAI inference and managed vector DBs (Pinecone, Zilliz, Vertex AI Matching Engine).</p>
                     </div>
                   </div>
                 </div>
                 
-                {/* Mission Statement */}
-                <div className="text-center bg-gradient-to-r from-primary-50 to-blue-50 p-8 rounded-2xl border border-primary-100 shadow-sm">
-                  <div className="max-w-3xl mx-auto">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4">🎯 My Mission</h3>
-                    <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                      I'm a <span className="font-bold text-primary-700 bg-gradient-to-r from-primary-600 to-blue-600 bg-clip-text text-transparent">versatile data & AI engineer</span> who bridges industries and domains with one clear goal: 
-                      <span className="font-bold text-primary-700 bg-gradient-to-r from-primary-600 to-blue-600 bg-clip-text text-transparent"> transforming complex business problems into intelligent, reliable, and scalable solutions</span>.
-                    </p>
-                    <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-600">
-                      <span className="px-4 py-2 bg-white rounded-full border border-primary-200">🚀 Fast Delivery</span>
-                      <span className="px-4 py-2 bg-white rounded-full border border-primary-200">🔧 Production-Ready</span>
-                      <span className="px-4 py-2 bg-white rounded-full border border-primary-200">📈 Measurable Impact</span>
-                      <span className="px-4 py-2 bg-white rounded-full border border-primary-200">🌍 Global Scale</span>
-                    </div>
-                  </div>
-                </div>
+                {/* Removed How I Work section */}
               </div>
             </div>
             
@@ -296,8 +331,14 @@ export default function Home() {
             
             {experienceData.map((exp, index) => (
               <div key={exp.id} className={`relative flex items-center mb-12 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
-                {/* Timeline Dot */}
-                <div className="absolute left-6 md:left-1/2 w-3 h-3 bg-primary-600 rounded-full border-3 border-white shadow-md transform md:-translate-x-1/2 z-10"></div>
+                {/* Timeline Dot with logo when available */}
+                <div className={`absolute left-6 md:left-1/2 w-10 h-10 rounded-full border-2 shadow-md transform md:-translate-x-1/2 z-10 overflow-hidden flex items-center justify-center ${getCompanyLogo(exp.company) ? 'bg-white border-primary-300' : 'bg-primary-600 border-white'}`}>
+                  {getCompanyLogo(exp.company) ? (
+                    <Image src={getCompanyLogo(exp.company)!} alt={`${exp.company} logo`} width={30} height={30} className="object-contain p-1" />
+                  ) : (
+                    <span className="block w-full h-full" />
+                  )}
+                </div>
                 
                 {/* Content Card */}
                 <div className={`ml-12 md:ml-0 md:w-5/12 ${index % 2 === 0 ? 'md:mr-auto md:pr-6' : 'md:ml-auto md:pl-6'}`}>
@@ -307,10 +348,22 @@ export default function Home() {
                       {exp.period}
                     </div>
                     
-                    {/* Position & Company */}
+                    {/* Position & Company with logo */}
                     <h3 className="text-xl font-bold text-gray-900 mb-1 group-hover:text-primary-600 transition-colors" dangerouslySetInnerHTML={{ __html: exp.position }}>
                     </h3>
-                    <p className="text-primary-600 font-semibold text-base mb-3">{exp.company}</p>
+                    <div className="flex items-center gap-2 mb-3">
+                      <div className="w-6 h-6 rounded-md overflow-hidden bg-white border border-gray-100 flex items-center justify-center">
+                        {getCompanyLogo(exp.company) ? (
+                          <Image src={getCompanyLogo(exp.company)!} alt={`${exp.company} logo`} width={24} height={24} className="object-contain" />
+                        ) : (
+                          <svg className="w-4 h-4 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4h16v16H4z"/></svg>
+                        )}
+                      </div>
+                      <p className="text-primary-600 font-semibold text-base">{exp.company}</p>
+                      {exp.company.includes('CHU Metz') && (
+                        <span className="ml-1 px-2 py-0.5 text-[10px] rounded-full bg-purple-100 text-purple-700 border border-purple-200">Freelance</span>
+                      )}
+                    </div>
                     
                     {/* Description */}
                     <div className="text-gray-600 leading-relaxed mb-4 text-sm">
@@ -322,7 +375,7 @@ export default function Home() {
                     {/* View Details Button */}
                     <div className="flex justify-center mb-4">
                       <a 
-                        href="/experience"
+                        href={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/experience`}
                         className="inline-flex items-center px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors text-sm font-medium"
                       >
                         <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -365,7 +418,7 @@ export default function Home() {
         
         <div className="text-center mt-12">
           <a 
-            href="/experience"
+            href={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/experience`}
             className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-2xl hover:from-primary-700 hover:to-primary-800 transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transform"
           >
             View Full Experience
@@ -446,7 +499,7 @@ export default function Home() {
         
         <div className="text-center mt-12">
           <a 
-            href="/projects"
+            href={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/projects`}
             className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-2xl hover:from-primary-700 hover:to-primary-800 transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transform"
           >
             View All Projects
@@ -457,35 +510,31 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* Contact CTA Section */}
+      {/* Contact CTA Section (moved earlier, removed secondary button) */}
+
+      {/* Articles Section (moved above Freelance Success) */}
       <Section 
-        title="Let's Work Together" 
-        subtitle="Ready to turn your data into insights? Let's discuss your next project"
+        id="articles" 
+        title="Latest Articles" 
+        subtitle="Insights and technical deep-dives from my experience in AI and data engineering"
         className="bg-white"
       >
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="bg-gradient-to-br from-primary-50 to-primary-100 rounded-3xl p-12 shadow-lg border border-primary-200">
-            <h3 className="text-3xl font-bold text-gray-900 mb-6">Ready to get started?</h3>
-            <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-              Whether you need AI solutions, data engineering, or analytics consulting, I'm here to help bring your vision to life.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a 
-                href="/contact"
-                className="px-8 py-4 bg-primary-600 text-white rounded-xl hover:bg-primary-700 transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transform"
-              >
-                Get in Touch
-              </a>
-              
-              <a 
-                href="/projects"
-                className="px-8 py-4 border-2 border-primary-600 text-primary-600 rounded-xl hover:bg-primary-600 hover:text-white transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transform"
-              >
-                View My Work
-              </a>
-            </div>
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          {articlesData.slice(0, 4).map((article) => (
+            <ArticleCard key={article.id} article={article} />
+          ))}
+        </div>
+        
+        <div className="text-center mt-12">
+          <a 
+            href={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/articles`}
+            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-2xl hover:from-primary-700 hover:to-primary-800 transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transform"
+          >
+            View All Articles
+            <svg className="w-6 h-6 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
         </div>
       </Section>
 
@@ -545,7 +594,7 @@ export default function Home() {
           
           <div className="text-center mt-8">
             <a 
-              href="/experience"
+              href={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/experience`}
               className="inline-flex items-center px-6 py-3 bg-white text-primary-600 rounded-xl hover:bg-primary-50 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl border border-primary-200"
             >
               View All Client Testimonials
@@ -557,42 +606,56 @@ export default function Home() {
         </div>
       </Section>
 
+      
+
       {/* Education Section */}
       <Section 
         id="education" 
-        title="Education" 
-        subtitle="My academic background and certifications"
+        title="Certifications & Education" 
+        subtitle="My academic background and professional certifications"
         className="bg-gradient-to-br from-gray-50 to-white"
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {educationData.map((edu, index) => (
-            <div key={edu.id} className="group">
-              <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:-translate-y-2 transform text-center h-full">
-                <div className="mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-primary-700 rounded-2xl flex items-center justify-center text-white font-bold text-xl mx-auto mb-4">
-                    {index + 1}
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors">
-                    {edu.degree}
-                  </h3>
-                  <p className="text-primary-600 font-semibold mb-2">{edu.institution}</p>
-                  <p className="text-gray-500 text-sm mb-4">{edu.period}</p>
-                  {edu.grade && (
-                    <span className="inline-block px-4 py-2 bg-gradient-to-r from-green-100 to-green-200 text-green-700 rounded-full text-sm font-semibold border border-green-300">
-                      {edu.grade}
-                    </span>
+        <div className="relative max-w-4xl mx-auto">
+          <div className="absolute left-6 top-0 bottom-0 w-1 bg-gradient-to-b from-primary-200 via-primary-400 to-primary-200"></div>
+          <div className="space-y-10">
+            {educationData.map((edu, index) => (
+              <div key={edu.id} className="relative flex items-start">
+                {/* Dot with logo centered on rail */}
+                <div className="absolute left-6 -translate-x-1/2 transform mt-1 w-10 h-10 rounded-full bg-white border-2 border-primary-300 shadow flex items-center justify-center">
+                  {edu.logo ? (
+                    <Image src={edu.logo as string} alt={`${edu.institution} logo`} width={32} height={32} className="object-contain" />
+                  ) : (
+                    <span className="text-primary-600 font-bold">{index + 1}</span>
                   )}
                 </div>
-                
-                <p className="text-gray-600 leading-relaxed">{edu.description}</p>
+                {/* Card */}
+                <div className="ml-16 w-full">
+                  <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition">
+                    <h3 className="text-lg font-bold text-gray-900 mb-1">{edu.degree}</h3>
+                    <div className="flex items-center gap-2 mb-1">
+                      {edu.logo && (
+                        <div className="w-6 h-6 rounded-md overflow-hidden bg-white border border-gray-100 flex items-center justify-center">
+                          <Image src={edu.logo as string} alt={`${edu.institution} logo`} width={20} height={20} className="object-contain" />
+                        </div>
+                      )}
+                      <p className="text-primary-600 font-medium">{edu.institution}</p>
+                    </div>
+                    <p className="text-gray-500 text-sm mb-3">{edu.period}</p>
+                    {/* Concise description rules */}
+                    <div className="text-gray-600 text-sm whitespace-pre-line">
+                      {edu.id === 2 && 'Specialization: ERDS – Economic Risks & Data Science.'}
+                      {edu.id === 3 && 'Intensive two-year program in mathematics and physics preparing for the French engineering schools competitive exams.'}
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-        
+
         <div className="text-center mt-12">
           <a 
-            href="/education"
+            href={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/education`}
             className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-2xl hover:from-primary-700 hover:to-primary-800 transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transform"
           >
             View Full Education
@@ -603,31 +666,7 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* Articles Section */}
-      <Section 
-        id="articles" 
-        title="Latest Articles" 
-        subtitle="Insights and technical deep-dives from my experience in AI and data engineering"
-        className="bg-white"
-      >
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {articlesData.slice(0, 4).map((article) => (
-            <ArticleCard key={article.id} article={article} />
-          ))}
-        </div>
-        
-        <div className="text-center mt-12">
-          <a 
-            href="/articles"
-            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-2xl hover:from-primary-700 hover:to-primary-800 transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transform"
-          >
-            View All Articles
-            <svg className="w-6 h-6 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </a>
-        </div>
-      </Section>
+      
 
       {/* Contact Section */}
       <Section 

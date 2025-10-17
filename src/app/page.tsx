@@ -93,8 +93,8 @@ export default function Home() {
               <p className="text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               I like building things that actually work. Most of what I do sits at the intersection of GenAI, data engineering, and real-world problem solving — designing tools that make sense, run fast, and help others make better decisions. Below are some projects I’ve worked on and what I’ve learned along the way.
               </p>
-            </div>
-
+        </div>
+        
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               {/* Left side - Photo */}
               <div className="flex justify-center lg:justify-start">
@@ -244,9 +244,9 @@ export default function Home() {
                             <p className="text-sm text-purple-600 mb-3 font-semibold">CHU Metz, Insurance, Finance</p>
                             <p className="text-sm text-gray-700 leading-relaxed">Deployed Microsoft 365 Business, Power BI Copilot, Qdrant vector databases, and AI-augmented BI pipelines for real-time data exploration.</p>
                           </div>
-                        </div>
-                      </div>
-                    </div>
+            </div>
+          </div>
+        </div>
                     
                     <div className="group">
                       <div className="bg-gradient-to-br from-orange-50 to-amber-50 p-6 rounded-xl border border-orange-100 hover:shadow-lg transition-all duration-300 hover:border-orange-300 h-full">
@@ -270,42 +270,42 @@ export default function Home() {
                 </div>
 
                 {/* Skills & Expertise */}
-                <div className="bg-gradient-to-r from-gray-50 to-slate-50 p-8 rounded-2xl border border-gray-200 shadow-sm">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">What I Ship</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {/* 1️⃣ GenAI & Machine Learning */}
-                    <div className="text-center group">
-                      <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                        <BrainCircuit className="w-8 h-8 text-white" strokeWidth={2} />
-                      </div>
-                      <h4 className="text-lg font-bold text-gray-900 mb-2">GenAI & Machine Learning</h4>
-                      <p className="text-sm text-gray-700 mb-1">End-to-end AI solutions from model development to production deployment. Building intelligent systems that solve real business problems.</p>
-                      <p className="text-xs text-gray-500">Stack: Python (Pandas, NumPy, Scikit-learn) · PyTorch · TensorFlow · Vector Embeddings · Computer Vision (CNNs, RNNs, LSTM) · Graph Neural Networks</p>
-                      <p className="text-xs text-gray-500 mt-1">GenAI: LLM Fine-tuning · RAG · Prompt Engineering · MCP · AI Agents · Vector DBs (Pinecone, Qdrant, Weaviate)</p>
-                    </div>
+        <div className="bg-gradient-to-r from-gray-50 to-slate-50 p-8 rounded-2xl border border-gray-200 shadow-sm">
+          <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">What I Ship</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* 1️⃣ GenAI & Machine Learning */}
+            <div className="text-center group">
+              <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                <BrainCircuit className="w-8 h-8 text-white" strokeWidth={2} />
+              </div>
+              <h4 className="text-lg font-bold text-gray-900 mb-2">GenAI & Machine Learning</h4>
+              <p className="text-sm text-gray-700 mb-1">End-to-end AI solutions from model development to production deployment. Building intelligent systems that solve real business problems.</p>
+              <p className="text-xs text-gray-500">Stack: Python (Pandas, NumPy, Scikit-learn) · PyTorch · TensorFlow · Vector Embeddings · Computer Vision (CNNs, RNNs, LSTM) · Graph Neural Networks</p>
+              <p className="text-xs text-gray-500 mt-1">GenAI: LLM Fine-tuning · RAG · Prompt Engineering · MCP · AI Agents · Vector DBs (Pinecone, Qdrant, Weaviate)</p>
+            </div>
 
-                    {/* 2️⃣ Data Engineering & Analytics */}
-                    <div className="text-center group">
-                      <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                        <Database className="w-8 h-8 text-white" strokeWidth={2} />
-                      </div>
-                      <h4 className="text-lg font-bold text-gray-900 mb-2">Data Engineering & Analytics</h4>
-                      <p className="text-sm text-gray-700 mb-1">Robust data pipelines and analytics platforms. From raw data to actionable insights with modern data stack technologies.</p>
-                      <p className="text-xs text-gray-500">Stack: dbt · Airbyte · SQL · Snowflake · AWS Redshift · BigQuery · GCS · CloudSQL · CI/CD (GitLab, Azure DevOps)</p>
-                      <p className="text-xs text-gray-500 mt-1">BI & Viz: Power BI · Looker · MicroStrategy · Streamlit · Excel · Google Sheets</p>
-                    </div>
+            {/* 2️⃣ Data Engineering & Analytics */}
+            <div className="text-center group">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                <Database className="w-8 h-8 text-white" strokeWidth={2} />
+              </div>
+              <h4 className="text-lg font-bold text-gray-900 mb-2">Data Engineering & Analytics</h4>
+              <p className="text-sm text-gray-700 mb-1">Robust data pipelines and analytics platforms. From raw data to actionable insights with modern data stack technologies.</p>
+              <p className="text-xs text-gray-500">Stack: dbt · Airbyte · SQL · Snowflake · AWS Redshift · BigQuery · GCS · CloudSQL · CI/CD (GitLab, Azure DevOps)</p>
+              <p className="text-xs text-gray-500 mt-1">BI & Viz: Power BI · Looker · MicroStrategy · Streamlit · Excel · Google Sheets</p>
+            </div>
 
-                    {/* 3️⃣ Cloud & Production Systems */}
-                    <div className="text-center group">
-                      <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-teal-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                        <Cloud className="w-8 h-8 text-white" strokeWidth={2} />
-                      </div>
-                      <h4 className="text-lg font-bold text-gray-900 mb-2">Cloud & Production Systems</h4>
-                      <p className="text-sm text-gray-700 mb-1">Scalable cloud infrastructure and production-ready AI systems. From development to deployment with enterprise-grade reliability.</p>
-                      <p className="text-xs text-gray-500">Stack: GCP (Vertex AI, Cloud Run) · Azure (Data Factory, Synapse, Databricks) · AWS (Lambda, SageMaker) · Docker · Kubernetes</p>
-                      <p className="text-xs text-gray-500 mt-1">APIs & Deploy: FastAPI · FastMCP · REST APIs · Pydantic · OpenTelemetry · Redis</p>
-                    </div>
-                  </div>
+            {/* 3️⃣ Cloud & Production Systems */}
+            <div className="text-center group">
+              <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-teal-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                <Cloud className="w-8 h-8 text-white" strokeWidth={2} />
+              </div>
+              <h4 className="text-lg font-bold text-gray-900 mb-2">Cloud & Production Systems</h4>
+              <p className="text-sm text-gray-700 mb-1">Scalable cloud infrastructure and production-ready AI systems. From development to deployment with enterprise-grade reliability.</p>
+              <p className="text-xs text-gray-500">Stack: GCP (Vertex AI, Cloud Run) · Azure (Data Factory, Synapse, Databricks) · AWS (Lambda, SageMaker) · Docker · Kubernetes</p>
+              <p className="text-xs text-gray-500 mt-1">APIs & Deploy: FastAPI · FastMCP · REST APIs · Pydantic · OpenTelemetry · Redis</p>
+            </div>
+          </div>
                 </div>
                 
                 {/* Removed How I Work section */}
@@ -375,7 +375,7 @@ export default function Home() {
                     {/* View Details Button */}
                     <div className="flex justify-center mb-4">
                       <a 
-                        href={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/experience`}
+                        href="/experience"
                         className="inline-flex items-center px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors text-sm font-medium"
                       >
                         <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -418,7 +418,7 @@ export default function Home() {
         
         <div className="text-center mt-12">
           <a 
-            href={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/experience`}
+            href="/experience"
             className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-2xl hover:from-primary-700 hover:to-primary-800 transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transform"
           >
             View Full Experience
@@ -430,9 +430,9 @@ export default function Home() {
       </Section>
 
       {/* Articles Section */}
-      <Section 
+      <Section
         id="articles" 
-        title="Latest Articles" 
+        title="Latest Articles"
         subtitle="Insights and technical deep-dives from my experience in AI and data engineering"
         className="bg-white"
       >
@@ -444,7 +444,7 @@ export default function Home() {
         
         <div className="text-center mt-12">
           <a 
-            href={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/articles`}
+            href="/articles"
             className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-2xl hover:from-primary-700 hover:to-primary-800 transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transform"
           >
             View All Articles
@@ -456,7 +456,7 @@ export default function Home() {
       </Section>
 
       {/* Projects Section */}
-      <Section 
+      <Section
         id="projects" 
         title="My Projects" 
         subtitle="Discover some of my recent projects and open source contributions"
@@ -472,35 +472,35 @@ export default function Home() {
                         {project.title}
                       </h3>
                       <p className="text-gray-600 leading-relaxed mb-6">
-                        {project.description}
-                      </p>
-                  </div>
-                  
+                      {project.description}
+                    </p>
+                </div>
+
                   <div className="flex flex-wrap gap-2 mb-6 flex-grow">
-                    {project.technologies.map((tech, techIndex) => (
-                      <span 
-                        key={techIndex}
-                        className="px-4 py-2 bg-gradient-to-r from-primary-50 to-primary-100 text-primary-700 rounded-full text-sm font-medium border border-primary-200 hover:from-primary-100 hover:to-primary-200 transition-all duration-300"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                  
-                  <div className="mt-auto">
-                    {project.githubUrl && (
-                      <a 
-                        href={project.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                  {project.technologies.map((tech, techIndex) => (
+                    <span
+                      key={techIndex}
+                      className="px-4 py-2 bg-gradient-to-r from-primary-50 to-primary-100 text-primary-700 rounded-full text-sm font-medium border border-primary-200 hover:from-primary-100 hover:to-primary-200 transition-all duration-300"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="mt-auto">
+                  {project.githubUrl && (
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
                         className="flex items-center justify-center px-6 py-3 bg-gray-900 text-white rounded-xl hover:bg-gray-800 transition-all duration-300 font-medium group"
                       >
                         <svg className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform duration-300" fill="currentColor" viewBox="0 0 24 24">
                           <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                         </svg>
                         View Code
-                      </a>
-                    )}
+                    </a>
+                  )}
                   </div>
                 </div>
               </div>
@@ -510,7 +510,7 @@ export default function Home() {
         
         <div className="text-center mt-12">
           <a 
-            href={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/projects`}
+            href="/projects"
             className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-2xl hover:from-primary-700 hover:to-primary-800 transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transform"
           >
             View All Projects
@@ -524,14 +524,14 @@ export default function Home() {
       {/* Contact CTA Section (moved earlier, removed secondary button) */}
 
       {/* Recommendations and Clients Testimonials Preview */}
-      <Section 
-        title="Recommendations and Clients Testimonials" 
+      <Section
+        title="Recommendations and Clients Testimonials"
         subtitle="Client testimonials and project highlights"
         className="bg-gradient-to-br from-gray-50 to-white"
       >
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {freelanceData.map((project) => (
+          {freelanceData.map((project) => (
               <div key={project.id} className="group">
                 <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:-translate-y-1 transform">
                   {/* Project Header */}
@@ -593,7 +593,7 @@ export default function Home() {
           
           <div className="text-center mt-8">
             <a 
-              href={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/experience`}
+              href="/experience"
               className="inline-flex items-center px-6 py-3 bg-white text-primary-600 rounded-xl hover:bg-primary-50 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl border border-primary-200"
             >
               View All Client Testimonials
@@ -961,7 +961,7 @@ export default function Home() {
 
         <div className="text-center mt-12">
           <a 
-            href={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/education`}
+            href="/education"
             className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-2xl hover:from-primary-700 hover:to-primary-800 transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transform"
           >
             View Full Education
@@ -975,7 +975,7 @@ export default function Home() {
       
 
       {/* Contact Section */}
-      <Section 
+      <Section
         id="contact" 
         title="Contact" 
         subtitle="Feel free to reach out to discuss projects or opportunities"
@@ -1109,7 +1109,7 @@ export default function Home() {
                       placeholder="Your message..."
                       required
                     ></textarea>
-                  </div>
+            </div>
                   
                   <button
                     type="submit"
@@ -1118,7 +1118,7 @@ export default function Home() {
                     Send message
                   </button>
                 </form>
-              </div>
+            </div>
             </div>
           </div>
         </div>

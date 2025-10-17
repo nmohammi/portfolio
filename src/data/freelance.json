@@ -1,66 +1,36 @@
 [
   {
     "id": 1,
-    "title": "Healthcare Data Platform",
-    "client": "CHU Metz",
-    "sector": "Healthcare",
-    "period": "2023",
-    "description": "Deployed a comprehensive cloud & AI infrastructure for secure data governance, built vector databases for medical records, and enabled AI-powered reporting systems.",
-    "technologies": ["AWS", "Python", "FastAPI", "PostgreSQL", "Vector DBs", "AI APIs"],
+    "title": "Data Analytics Excellence",
+    "client": "Société Générale",
+    "sector": "Banking",
+    "period": "2024",
+    "description": "Led data analytics initiatives and built robust dbt pipelines for performance reporting across multiple business lines.",
+    "technologies": ["dbt", "Snowflake", "AWS Redshift", "MicroStrategy", "Power BI"],
     "testimonial": {
-      "text": "Nasrallah delivered an exceptional AI infrastructure that transformed our data management. His expertise in cloud technologies and attention to security requirements exceeded our expectations.",
-      "author": "Dr. Marie Dubois",
-      "position": "IT Director, CHU Metz",
-      "rating": 5
+      "text": "Nasrallah demonstrated exceptional technical skills and analytical thinking during his time at Société Générale. His ability to design and implement complex data pipelines while mentoring junior team members was outstanding.",
+      "author": "Gilles Hubschwerlin",
+      "position": "Quality and Performance Manager, Operations Directorate",
+      "rating": 5,
+      "source": "LinkedIn"
     },
-    "screenshot": "/screenshots/chu-metz-dashboard.jpg"
+    "screenshot": "/screenshots/sg-analytics.jpg"
   },
   {
     "id": 2,
-    "title": "Insurance Analytics Pipeline",
-    "client": "Confidential Insurance",
-    "sector": "Insurance",
-    "period": "2022-2023",
-    "description": "Built automated risk assessment models and industrialized analytics pipelines, reducing manual processing time by 70% and improving accuracy by 40%.",
-    "technologies": ["Python", "Apache Airflow", "Machine Learning", "Snowflake", "dbt"],
+    "title": "Healthcare Data Infrastructure",
+    "client": "CHU Metz",
+    "sector": "Healthcare",
+    "period": "2024",
+    "description": "Implemented comprehensive cloud and AI infrastructure for secure healthcare data management and analytics.",
+    "technologies": ["Microsoft Fabric", "Azure Data Factory", "Power BI Copilot", "GCP", "Qdrant"],
     "testimonial": {
-      "text": "The analytics pipeline Nasrallah built revolutionized our risk assessment process. The accuracy improvements and time savings have been game-changing for our operations.",
-      "author": "Jean-Pierre Martin",
-      "position": "Head of Data Analytics",
-      "rating": 5
+      "text": "Nasrallah's expertise in data analytics and cloud technologies was instrumental in transforming our data infrastructure. His professional approach and technical excellence made him a valuable team member.",
+      "author": "Jerome Filippone",
+      "position": "Head of Data",
+      "rating": 5,
+      "source": "LinkedIn"
     },
-    "screenshot": "/screenshots/insurance-analytics.jpg"
-  },
-  {
-    "id": 3,
-    "title": "Financial AI Solutions",
-    "client": "Financial Services Firm",
-    "sector": "Finance",
-    "period": "2022",
-    "description": "Developed custom AI models for fraud detection and automated reporting systems, processing millions of transactions with 99.5% accuracy.",
-    "technologies": ["Python", "TensorFlow", "Kubernetes", "Redis", "PostgreSQL"],
-    "testimonial": {
-      "text": "Nasrallah's AI solutions have significantly improved our fraud detection capabilities. His technical expertise and project management skills are outstanding.",
-      "author": "Sophie Laurent",
-      "position": "CTO",
-      "rating": 5
-    },
-    "screenshot": "/screenshots/finance-ai-dashboard.jpg"
-  },
-  {
-    "id": 4,
-    "title": "Research AI Optimization",
-    "client": "ENSEA Research Lab",
-    "sector": "Research",
-    "period": "2021-2022",
-    "description": "Designed and optimized deep learning models (CNNs) with FPGA acceleration for computer vision tasks, achieving 3x performance improvement.",
-    "technologies": ["Python", "PyTorch", "FPGA", "Computer Vision", "Deep Learning"],
-    "testimonial": {
-      "text": "Nasrallah's work on FPGA acceleration was groundbreaking. His optimization techniques pushed the boundaries of what we thought possible with our hardware.",
-      "author": "Prof. Alexandre Moreau",
-      "position": "Research Director, ENSEA",
-      "rating": 5
-    },
-    "screenshot": "/screenshots/research-fpga.jpg"
+    "screenshot": "/screenshots/chu-data-infrastructure.jpg"
   }
 ]

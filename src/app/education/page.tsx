@@ -23,24 +23,294 @@ export default function EducationPage() {
         </div>
       </section>
 
-      {/* Certifications grid */}
+      {/* Professional Certifications */}
       <Section 
         title="Professional Certifications" 
-        subtitle="Verified credentials, issued by recognized organizations"
-        className="bg-gradient-to-br from-gray-50 to-white"
+        subtitle="Industry-recognized certifications validating my expertise"
+        className="bg-white"
       >
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {/* Placeholder cards - add items to a data file later */}
-          <div className="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm hover:shadow-md transition">
-            <div className="flex items-start gap-3">
-              <div className="w-10 h-10 rounded-lg bg-white border border-gray-200 flex items-center justify-center">
-                <svg className="w-6 h-6 text-primary-600" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Hugging Face Certifications */}
+            <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 transform">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-xl flex items-center justify-center">
+                  <span className="text-white font-bold text-lg">🤗</span>
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900">AI Agents: Fundamentals</h3>
+                  <p className="text-sm text-gray-600">Hugging Face</p>
+                </div>
               </div>
-              <div>
-                <h3 className="font-semibold text-gray-900">Certification name</h3>
-                <p className="text-sm text-gray-600">Issuer • YYYY</p>
-                <a href="#" className="text-sm text-primary-600 hover:text-primary-700">View credential →</a>
+              <div className="flex flex-wrap gap-2 mb-4">
+                <span className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs">AI Agents</span>
+                <span className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs">LangChain</span>
+                <span className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs">LLMs</span>
+                <span className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs">Prompt Engineering</span>
               </div>
+              <a href="https://cas-bridge.xethub.hf.co/xet-bridge-us/67a47037749ea2c4b9fafd4b/c7dc4fc98b0df2925dfdfb075f50028c783a535a338598adba313653d7b5a9ea?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=cas%2F20251017%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20251017T225024Z&X-Amz-Expires=3600&X-Amz-Signature=e490d5a1a82b3bdf6e15ee6cdceecafa80be5ee60d023ef227121ea9e2d7f03b&X-Amz-SignedHeaders=host&X-Xet-Cas-Uid=68457b27d29ba7be47693319&response-content-disposition=inline%3B+filename*%3DUTF-8%27%272025-06-29.png%3B+filename%3D%222025-06-29.png%22%3B&response-content-type=image%2Fpng&x-id=GetObject&Expires=1760745024&Policy=eyJTdGF0ZW1lbnQiOlt7IkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc2MDc0NTAyNH19LCJSZXNvdXJjZSI6Imh0dHBzOi8vY2FzLWJyaWRnZS54ZXRodWIuaGYuY28veGV0LWJyaWRnZS11cy82N2E0NzAzNzc0OWVhMmM0YjlmYWZkNGIvYzdkYzRmYzk4YjBkZjI5MjVkZmRmYjA3NWY1MDAyOGM3ODNhNTM1YTMzODU5OGFkYmEzMTM2NTNkN2I1YTllYSoifV19&Signature=KTxa%7EP1751xRFAFcskNMlHDbGFbqSBpm5j0i46RQL4uuJKGc7xLhMxqNhiXYN%7ErPibh0b%7E9dZnnVCk56V2cNs7oyyfMo4TKF1iGg-7LPFbHEuWQCvt6DXAXf%7E26lYI1mgEy1l-1cIV-O3vVhbcEU1JGM9fR80BkLJrSDVJmwohSP8BFv7rCkB-inSDoISL-Ql-B7cr05sQW7w%7EPl1fTVPeKxqaYbkASWUBChETPlWNy-kh0qaIff4lZUSg%7EiKHywIWvNQMt4f1U7SNzfkjiDusW8dVWXa1JTyu%7E0A1VkRIaCZbxy4e8OfkbGywQ2g9eB5PdlNcqKer5m8UgKeodvzg__&Key-Pair-Id=K2L8F4GPSG1IFC" target="_blank" rel="noopener noreferrer" className="text-orange-600 hover:text-orange-800 text-sm font-medium flex items-center">
+                View Credential
+                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
+
+            <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 transform">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-xl flex items-center justify-center">
+                  <span className="text-white font-bold text-lg">🤗</span>
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900">LLMs Fine-Tuning</h3>
+                  <p className="text-sm text-gray-600">Hugging Face</p>
+                </div>
+              </div>
+              <div className="flex flex-wrap gap-2 mb-4">
+                <span className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs">Fine-Tuning</span>
+                <span className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs">PyTorch</span>
+                <span className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs">NLP</span>
+                <span className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs">Deep Learning</span>
+              </div>
+              <a href="https://huggingface.co/learn/llm-course/chapter3/7?fw=pt" target="_blank" rel="noopener noreferrer" className="text-orange-600 hover:text-orange-800 text-sm font-medium flex items-center">
+                View Credential
+                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
+
+            <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 transform">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-xl flex items-center justify-center">
+                  <span className="text-white font-bold text-lg">🤗</span>
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900">LLMs Fundamentals</h3>
+                  <p className="text-sm text-gray-600">Hugging Face</p>
+                </div>
+              </div>
+              <div className="flex flex-wrap gap-2 mb-4">
+                <span className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs">Transformers</span>
+                <span className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs">Attention</span>
+                <span className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs">AI Ethics</span>
+                <span className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs">Bias Awareness</span>
+              </div>
+              <a href="https://huggingface.co/learn/llm-course/chapter1/11?fw=pt" target="_blank" rel="noopener noreferrer" className="text-orange-600 hover:text-orange-800 text-sm font-medium flex items-center">
+                View Credential
+                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
+
+            <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 transform">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-xl flex items-center justify-center">
+                  <span className="text-white font-bold text-lg">🤗</span>
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900">Model Context Protocol</h3>
+                  <p className="text-sm text-gray-600">Hugging Face</p>
+                </div>
+              </div>
+              <div className="flex flex-wrap gap-2 mb-4">
+                <span className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs">MCP</span>
+                <span className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs">Multi-Agent</span>
+                <span className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs">Tool Chaining</span>
+                <span className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs">REST APIs</span>
+              </div>
+              <a href="#" target="_blank" rel="noopener noreferrer" className="text-orange-600 hover:text-orange-800 text-sm font-medium flex items-center">
+                View Credential
+                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
+
+            {/* dbt Labs Certification */}
+            <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 transform">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl flex items-center justify-center">
+                  <span className="text-white font-bold text-lg">dbt</span>
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900">dbt Fundamentals</h3>
+                  <p className="text-sm text-gray-600">dbt Labs</p>
+                </div>
+              </div>
+              <div className="flex flex-wrap gap-2 mb-4">
+                <span className="px-2 py-1 bg-orange-50 text-orange-700 rounded text-xs">Data Analytics</span>
+                <span className="px-2 py-1 bg-orange-50 text-orange-700 rounded text-xs">Data Modeling</span>
+                <span className="px-2 py-1 bg-orange-50 text-orange-700 rounded text-xs">SQL</span>
+                <span className="px-2 py-1 bg-orange-50 text-orange-700 rounded text-xs">BigQuery</span>
+              </div>
+              <a href="https://credentials.getdbt.com/fda4da24-9c2b-40e9-8f4b-5070c5cfce76" target="_blank" rel="noopener noreferrer" className="text-orange-600 hover:text-orange-800 text-sm font-medium flex items-center">
+                View Credential
+                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
+
+            {/* LinkedIn Certifications */}
+            <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 transform">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-800 rounded-xl flex items-center justify-center">
+                  <span className="text-white font-bold text-lg">in</span>
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900">Google Cloud Foundations</h3>
+                  <p className="text-sm text-gray-600">LinkedIn</p>
+                </div>
+              </div>
+              <div className="flex flex-wrap gap-2 mb-4">
+                <span className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs">GCP</span>
+                <span className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs">BigQuery</span>
+                <span className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs">GCS</span>
+              </div>
+              <a href="https://www.linkedin.com/learning/certificates/d10eacbb4859c9387dfbcefbf9c345f7d65193875dc1b37077c0c29ed014bfd0?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3B2ojbgXVzSH6PLSIUwx0%2FEw%3D%3D" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 text-sm font-medium flex items-center">
+                View Credential
+                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
+
+            <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 transform">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-800 rounded-xl flex items-center justify-center">
+                  <span className="text-white font-bold text-lg">in</span>
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900">Agile Project Management</h3>
+                  <p className="text-sm text-gray-600">LinkedIn</p>
+                </div>
+              </div>
+              <div className="flex flex-wrap gap-2 mb-4">
+                <span className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs">Jira</span>
+                <span className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs">Scrum</span>
+                <span className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs">Kanban</span>
+              </div>
+              <a href="https://www.linkedin.com/learning/certificates/43c6197863f0c9a38446252f8d62a5de36f557383e3f4e86e621a5543f89e299?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3B2ojbgXVzSH6PLSIUwx0%2FEw%3D%3D" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 text-sm font-medium flex items-center">
+                View Credential
+                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
+
+            <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 transform">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-800 rounded-xl flex items-center justify-center">
+                  <span className="text-white font-bold text-lg">in</span>
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900">Telling Stories with Data</h3>
+                  <p className="text-sm text-gray-600">LinkedIn</p>
+                </div>
+              </div>
+              <div className="flex flex-wrap gap-2 mb-4">
+                <span className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs">Data Visualization</span>
+                <span className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs">Storytelling</span>
+              </div>
+              <a href="https://www.linkedin.com/learning/certificates/adff1543a85906b1095fccab482d43463e96d6a63ca7bd591dfcf1241850a6ba?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3B2ojbgXVzSH6PLSIUwx0%2FEw%3D%3D" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 text-sm font-medium flex items-center">
+                View Credential
+                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
+
+            {/* 365 Data Science Certifications */}
+            <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 transform">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-700 rounded-xl flex items-center justify-center">
+                  <span className="text-white font-bold text-lg">365</span>
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900">Data Analyst & Power BI</h3>
+                  <p className="text-sm text-gray-600">365 Data Science</p>
+                </div>
+              </div>
+              <div className="flex flex-wrap gap-2 mb-4">
+                <span className="px-2 py-1 bg-green-50 text-green-700 rounded text-xs">Power BI</span>
+                <span className="px-2 py-1 bg-green-50 text-green-700 rounded text-xs">Data Analysis</span>
+              </div>
+              <a href="https://learn.365datascience.com/certificates/CC-78826C8462/" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-800 text-sm font-medium flex items-center">
+                View Credential
+                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
+
+            <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 transform">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-700 rounded-xl flex items-center justify-center">
+                  <span className="text-white font-bold text-lg">365</span>
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900">SQL & MySQL Specialist</h3>
+                  <p className="text-sm text-gray-600">365 Data Science</p>
+                </div>
+              </div>
+              <div className="flex flex-wrap gap-2 mb-4">
+                <span className="px-2 py-1 bg-green-50 text-green-700 rounded text-xs">SQL</span>
+                <span className="px-2 py-1 bg-green-50 text-green-700 rounded text-xs">MySQL</span>
+                <span className="px-2 py-1 bg-green-50 text-green-700 rounded text-xs">Databases</span>
+              </div>
+              <a href="https://learn.365datascience.com/certificates/CC-EC01B571E1/" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-800 text-sm font-medium flex items-center">
+                View Credential
+                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
+
+            {/* Other Certifications */}
+            <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 transform">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-gray-600 to-gray-800 rounded-xl flex items-center justify-center">
+                  <span className="text-white font-bold text-lg">Git</span>
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900">Git and GitHub</h3>
+                  <p className="text-sm text-gray-600">ECT Global</p>
+                </div>
+              </div>
+              <div className="flex flex-wrap gap-2 mb-4">
+                <span className="px-2 py-1 bg-gray-50 text-gray-700 rounded text-xs">Version Control</span>
+                <span className="px-2 py-1 bg-gray-50 text-gray-700 rounded text-xs">GitHub</span>
+              </div>
+              <a href="https://learn.365datascience.com/certificates/CC-D6FDFBEDA8/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-800 text-sm font-medium flex items-center">
+                View Credential
+                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
+
+            <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 transform">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-700 rounded-xl flex items-center justify-center">
+                  <span className="text-white font-bold text-lg">TOEIC</span>
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900">TOEIC Score</h3>
+                  <p className="text-sm text-gray-600">985/990</p>
+                </div>
+              </div>
+              <div className="flex flex-wrap gap-2 mb-4">
+                <span className="px-2 py-1 bg-purple-50 text-purple-700 rounded text-xs">English Proficiency</span>
+                <span className="px-2 py-1 bg-purple-50 text-purple-700 rounded text-xs">Business English</span>
+              </div>
+              <a href="#" className="text-purple-600 hover:text-purple-800 text-sm font-medium flex items-center">
+                View Credential
+                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
             </div>
           </div>
         </div>
@@ -91,64 +361,7 @@ export default function EducationPage() {
         </div>
       </Section>
 
-      {/* Academic Highlights */}
-      <Section 
-        title="Academic Highlights" 
-        subtitle="Key achievements and specializations"
-        className="bg-gradient-to-br from-gray-50 to-white"
-      >
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl flex items-center justify-center text-white">
-                  🎓
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900">Master's Thesis</h3>
-              </div>
-              <p className="text-gray-600 leading-relaxed">
-                "Optimization of Deep Learning Models for Edge Computing Applications" - Research focused on making AI models more efficient for real-world deployment, combining theoretical knowledge with practical implementation.
-              </p>
-            </div>
-            
-            <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-700 rounded-2xl flex items-center justify-center text-white">
-                  📊
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900">Statistical Foundation</h3>
-              </div>
-              <p className="text-gray-600 leading-relaxed">
-                Strong foundation in mathematical modeling, statistical analysis, and computational methods from my Bachelor's in Mathematics & Statistics, providing the analytical rigor essential for data science.
-              </p>
-            </div>
-            
-            <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-700 rounded-2xl flex items-center justify-center text-white">
-                  🔬
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900">Research Experience</h3>
-              </div>
-              <p className="text-gray-600 leading-relaxed">
-                Hands-on experience in designing and optimizing deep learning models, particularly CNNs with FPGA acceleration, contributing to cutting-edge research in computer vision and AI optimization.
-              </p>
-            </div>
-            
-            <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-700 rounded-2xl flex items-center justify-center text-white">
-                  🏆
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900">Academic Excellence</h3>
-              </div>
-              <p className="text-gray-600 leading-relaxed">
-                Consistent academic performance with Distinction and First Class Honours across all degrees, demonstrating commitment to excellence and deep understanding of complex mathematical and computational concepts.
-              </p>
-            </div>
-          </div>
-        </div>
-      </Section>
+      {/* Professional Certifications */}
 
       {/* Skills Developed */}
       <Section 
@@ -158,46 +371,119 @@ export default function EducationPage() {
       >
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="w-20 h-20 bg-gradient-to-br from-primary-500 to-primary-700 rounded-3xl flex items-center justify-center text-white font-bold text-2xl mx-auto mb-6">
-                Math
+            {/* AI & Machine Learning */}
+            <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 border border-blue-200 flex flex-col h-full">
+              <div className="text-center mb-6">
+                <div className="w-20 h-20 bg-gradient-to-br from-primary-500 to-primary-700 rounded-3xl flex items-center justify-center text-white font-bold text-2xl mx-auto mb-4">
+                  AI
+                </div>
+                <h3 className="text-xl font-bold text-gray-900">AI & Machine Learning</h3>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Mathematical Foundation</h3>
-              <ul className="text-gray-600 space-y-2">
-                <li>• Advanced Calculus</li>
-                <li>• Linear Algebra</li>
-                <li>• Probability Theory</li>
-                <li>• Statistical Inference</li>
-                <li>• Mathematical Modeling</li>
-              </ul>
+              <div className="flex-grow">
+                <div className="space-y-3">
+                  <div className="bg-white rounded-lg p-3 shadow-sm">
+                    <p className="text-sm font-medium text-gray-800">Deep Learning Applied</p>
+                    <p className="text-xs text-gray-600">neural networks, CNNs, RNNs, transformers</p>
+                  </div>
+                  <div className="bg-white rounded-lg p-3 shadow-sm">
+                    <p className="text-sm font-medium text-gray-800">Machine Learning</p>
+                    <p className="text-xs text-gray-600">supervised/unsupervised, deep learning, reinforcement learning</p>
+                  </div>
+                  <div className="bg-white rounded-lg p-3 shadow-sm">
+                    <p className="text-sm font-medium text-gray-800">Reinforcement Learning</p>
+                    <p className="text-xs text-gray-600">Decision Making</p>
+                  </div>
+                  <div className="bg-white rounded-lg p-3 shadow-sm">
+                    <p className="text-sm font-medium text-gray-800">Computer Vision</p>
+                    <p className="text-xs text-gray-600">image analysis, object detection, segmentation</p>
+                  </div>
+                  <div className="bg-white rounded-lg p-3 shadow-sm">
+                    <p className="text-sm font-medium text-gray-800">Natural Language Processing</p>
+                  </div>
+                  <div className="bg-white rounded-lg p-3 shadow-sm">
+                    <p className="text-sm font-medium text-gray-800">Diffusion Models</p>
+                  </div>
+                </div>
+              </div>
             </div>
             
-            <div className="text-center">
-              <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-green-700 rounded-3xl flex items-center justify-center text-white font-bold text-2xl mx-auto mb-6">
-                AI
+            {/* Data Science & Analytics */}
+            <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-8 border border-green-200 flex flex-col h-full">
+              <div className="text-center mb-6">
+                <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-green-700 rounded-3xl flex items-center justify-center text-white font-bold text-2xl mx-auto mb-4">
+                  Data
+                </div>
+                <h3 className="text-xl font-bold text-gray-900">Data Science & Analytics</h3>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">AI & Machine Learning</h3>
-              <ul className="text-gray-600 space-y-2">
-                <li>• Deep Learning</li>
-                <li>• Neural Networks</li>
-                <li>• Computer Vision</li>
-                <li>• Model Optimization</li>
-                <li>• Edge Computing</li>
-              </ul>
+              <div className="flex-grow">
+                <div className="space-y-3">
+                  <div className="bg-white rounded-lg p-3 shadow-sm">
+                    <p className="text-sm font-medium text-gray-800">Big Data & Data Engineering</p>
+                    <p className="text-xs text-gray-600">distributed systems: Hadoop, Spark; data pipelines, MLOps</p>
+                  </div>
+                  <div className="bg-white rounded-lg p-3 shadow-sm">
+                    <p className="text-sm font-medium text-gray-800">Big Data Analytics</p>
+                    <p className="text-xs text-gray-600">distributed systems, Spark, Hadoop, MapReduce</p>
+                  </div>
+                  <div className="bg-white rounded-lg p-3 shadow-sm">
+                    <p className="text-sm font-medium text-gray-800">Econometrics & Big-Data</p>
+                    <p className="text-xs text-gray-600">panel/time-series, causal inference</p>
+                  </div>
+                  <div className="bg-white rounded-lg p-3 shadow-sm">
+                    <p className="text-sm font-medium text-gray-800">Time Series & Stochastic</p>
+                    <p className="text-xs text-gray-600">forecasting, sequential modeling</p>
+                  </div>
+                  <div className="bg-white rounded-lg p-3 shadow-sm">
+                    <p className="text-sm font-medium text-gray-800">Stochastic Processes</p>
+                    <p className="text-xs text-gray-600">Markov models, multivariate series</p>
+                  </div>
+                  <div className="bg-white rounded-lg p-3 shadow-sm">
+                    <p className="text-sm font-medium text-gray-800">Signal Processing</p>
+                    <p className="text-xs text-gray-600">neural methods for audio/vision</p>
+                  </div>
+                </div>
+              </div>
             </div>
             
-            <div className="text-center">
-              <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-700 rounded-3xl flex items-center justify-center text-white font-bold text-2xl mx-auto mb-6">
-                CS
+            {/* Mathematical Foundation */}
+            <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-8 border border-purple-200 flex flex-col h-full">
+              <div className="text-center mb-6">
+                <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-700 rounded-3xl flex items-center justify-center text-white font-bold text-2xl mx-auto mb-4">
+                  Math
+                </div>
+                <h3 className="text-xl font-bold text-gray-900">Mathematical Foundation</h3>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Computer Science</h3>
-              <ul className="text-gray-600 space-y-2">
-                <li>• Algorithm Design</li>
-                <li>• Data Structures</li>
-                <li>• Software Engineering</li>
-                <li>• FPGA Programming</li>
-                <li>• Research Methodology</li>
-              </ul>
+              <div className="flex-grow">
+                <div className="space-y-3">
+                  <div className="bg-white rounded-lg p-3 shadow-sm">
+                    <p className="text-sm font-medium text-gray-800">Advanced Mathematics</p>
+                    <p className="text-xs text-gray-600">linear algebra, multivariable calculus, vector spaces, differential equations</p>
+                  </div>
+                  <div className="bg-white rounded-lg p-3 shadow-sm">
+                    <p className="text-sm font-medium text-gray-800">Probabilistic Methods</p>
+                    <p className="text-xs text-gray-600">Statistical Inference</p>
+                  </div>
+                  <div className="bg-white rounded-lg p-3 shadow-sm">
+                    <p className="text-sm font-medium text-gray-800">Optimization Techniques</p>
+                    <p className="text-xs text-gray-600">convex optimization, gradient methods, large-scale systems</p>
+                  </div>
+                  <div className="bg-white rounded-lg p-3 shadow-sm">
+                    <p className="text-sm font-medium text-gray-800">Mathematics for Data Science</p>
+                    <p className="text-xs text-gray-600">linear algebra, optimization, probability</p>
+                  </div>
+                  <div className="bg-white rounded-lg p-3 shadow-sm">
+                    <p className="text-sm font-medium text-gray-800">Discrete Mathematics</p>
+                    <p className="text-xs text-gray-600">Graph Theory</p>
+                  </div>
+                  <div className="bg-white rounded-lg p-3 shadow-sm">
+                    <p className="text-sm font-medium text-gray-800">Probability Theory</p>
+                    <p className="text-xs text-gray-600">Discrete & Continuous</p>
+                  </div>
+                  <div className="bg-white rounded-lg p-3 shadow-sm">
+                    <p className="text-sm font-medium text-gray-800">Metric & Topological Spaces</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

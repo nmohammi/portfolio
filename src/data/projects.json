@@ -1,38 +1,34 @@
 [
   {
     "id": 1,
-    "title": "AI Search Engine",
-    "description": "Advanced semantic search engine with vector embeddings and LLM integration for enhanced query understanding and results ranking.",
-    "technologies": ["Python", "FastAPI", "Pinecone", "OpenAI", "Docker"],
-    "githubUrl": "https://github.com/username/ai-search-engine",
-    "demoUrl": "https://search.example.com",
+    "title": "Next Word Prediction LSTM",
+    "description": "LSTM-based neural network trained on Sherlock Holmes text to predict next words in sequences. Achieved 87.54% accuracy with TensorFlow/Keras.",
+    "technologies": ["Python", "TensorFlow", "Keras", "NumPy", "LSTM", "NLP"],
+    "githubUrl": "https://github.com/nmohammi/Next-Word-Prediction-Project---LSTM",
     "image": "/api/placeholder/600/400"
   },
   {
     "id": 2,
-    "title": "Dynamic Pricing Algorithm",
-    "description": "Machine learning-powered pricing optimization system for e-commerce, incorporating market data and demand forecasting.",
-    "technologies": ["Python", "Scikit-learn", "Pandas", "Redis", "PostgreSQL"],
-    "githubUrl": "https://github.com/username/pricing-algorithm",
-    "demoUrl": "https://pricing.example.com",
+    "title": "Climate Risk Modeling",
+    "description": "Credit risk prediction model integrating climate factors with borrower financial data. Built with Square Management Consulting using Random Forest.",
+    "technologies": ["Python", "Scikit-learn", "Pandas", "Random Forest", "Climate Data", "Risk Modeling"],
+    "githubUrl": "https://github.com/nmohammi/Climate-and-Physical-Risk-Modelling---Square-Management",
     "image": "/api/placeholder/600/400"
   },
   {
     "id": 3,
-    "title": "Analytics Pipeline",
-    "description": "Cloud-native data pipeline for processing financial KPIs with real-time monitoring and automated reporting.",
-    "technologies": ["Python", "Apache Airflow", "AWS", "Kubernetes", "Grafana"],
-    "githubUrl": "https://github.com/username/analytics-pipeline",
-    "demoUrl": "https://analytics.example.com",
+    "title": "CAPM Estimation and Analysis",
+    "description": "Capital Asset Pricing Model analysis of major NASDAQ stocks (AAPL, MSFT, AMZN, GOOGL, META) using Yahoo Finance data and statistical modeling.",
+    "technologies": ["Python", "Pandas", "NumPy", "Matplotlib", "Seaborn", "Financial Analysis"],
+    "githubUrl": "https://github.com/nmohammi/CAPM-Estimation-and-Analysis",
     "image": "/api/placeholder/600/400"
   },
   {
     "id": 4,
-    "title": "Multi-tenant AI API",
-    "description": "Scalable API platform providing NLP services (embeddings, semantic search) to multiple organizations with tenant isolation.",
-    "technologies": ["FastAPI", "Docker", "Kubernetes", "PostgreSQL", "Redis"],
-    "githubUrl": "https://github.com/username/multitenant-ai-api",
-    "demoUrl": "https://api.example.com",
+    "title": "End to End Chatbot",
+    "description": "Intelligent chatbot with intent classification using Logistic Regression and TF-IDF vectorization, deployed with Streamlit web interface.",
+    "technologies": ["Python", "Streamlit", "Scikit-learn", "NLTK", "TF-IDF", "Logistic Regression"],
+    "githubUrl": "https://github.com/nmohammi/End-to-End-Chatbot-using-Python-and-Streamlit",
     "image": "/api/placeholder/600/400"
   }
 ]

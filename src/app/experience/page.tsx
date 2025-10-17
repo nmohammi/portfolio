@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import Image from 'next/image'
 import { Section } from '@/components/Section'
 import { TestimonialCard } from '@/components/TestimonialCard'
@@ -10,6 +10,19 @@ import Link from 'next/link'
 
 export default function ExperiencePage() {
   const [selectedExperience, setSelectedExperience] = useState<number | null>(null)
+  const detailedViewRef = useRef<HTMLDivElement>(null)
+
+  const handleExperienceClick = (expId: number) => {
+    setSelectedExperience(expId)
+    // Smooth scroll to detailed view after a short delay to ensure it's rendered
+    setTimeout(() => {
+      detailedViewRef.current?.scrollIntoView({ 
+        behavior: 'smooth', 
+        block: 'start',
+        inline: 'nearest'
+      })
+    }, 100)
+  }
 
   const companyLogoMap: Record<string, string> = {
     'Opteamis': '/opteamis.png',
@@ -79,7 +92,7 @@ export default function ExperiencePage() {
                     ? 'border-primary-500 bg-primary-50' 
                     : 'border-gray-100 hover:border-primary-300'
                 }`}
-                onClick={() => setSelectedExperience(exp.id)}
+                onClick={() => handleExperienceClick(exp.id)}
               >
                 {/* Date Badge */}
                 <div className="inline-block px-4 py-2 bg-gradient-to-r from-primary-100 to-primary-200 text-primary-700 rounded-full text-sm font-semibold mb-4">
@@ -146,7 +159,7 @@ export default function ExperiencePage() {
 
           {/* Detailed View */}
           {selectedExp && (
-            <div className="bg-white rounded-3xl p-12 shadow-2xl border border-gray-100">
+            <div ref={detailedViewRef} className="bg-white rounded-3xl p-12 shadow-2xl border border-gray-100">
               <div className="max-w-4xl mx-auto">
                 {/* Header */}
                 <div className="text-center mb-12">
@@ -180,65 +193,6 @@ export default function ExperiencePage() {
               </div>
             </div>
           )}
-        </div>
-      </Section>
-
-      {/* Key Achievements */}
-      <Section 
-        title="Key Achievements" 
-        subtitle="Highlights from my professional journey"
-        className="bg-gradient-to-br from-gray-50 to-white"
-      >
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl flex items-center justify-center text-white">
-                  🚀
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900">AI Product Development</h3>
-              </div>
-              <p className="text-gray-600 leading-relaxed">
-                Built and deployed multiple AI products including talent search engines, pricing algorithms, and CV parsers that are now used daily by HR teams, tech teams, and clients across different organizations.
-              </p>
-            </div>
-            
-            <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-700 rounded-2xl flex items-center justify-center text-white">
-                  📊
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900">Analytics Pipeline Industrialization</h3>
-              </div>
-              <p className="text-gray-600 leading-relaxed">
-                Successfully industrialized analytics pipelines at Société Générale, standardizing performance KPIs across multiple business units and enabling data-driven decision making at scale.
-              </p>
-            </div>
-            
-            <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-700 rounded-2xl flex items-center justify-center text-white">
-                  🌍
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900">Multi-Industry Impact</h3>
-              </div>
-              <p className="text-gray-600 leading-relaxed">
-                Successfully delivered AI and cloud infrastructure solutions across healthcare (CHU Metz), insurance, finance, and research sectors, demonstrating versatility and adaptability.
-              </p>
-            </div>
-            
-            <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-700 rounded-2xl flex items-center justify-center text-white">
-                  🔬
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900">Research & Innovation</h3>
-              </div>
-              <p className="text-gray-600 leading-relaxed">
-                Designed and optimized deep learning models including CNNs with FPGA acceleration for computer vision tasks, contributing to cutting-edge research in AI optimization.
-              </p>
-            </div>
-          </div>
         </div>
       </Section>
 

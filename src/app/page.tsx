@@ -273,37 +273,37 @@ export default function Home() {
                 <div className="bg-gradient-to-r from-gray-50 to-slate-50 p-8 rounded-2xl border border-gray-200 shadow-sm">
                   <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">What I Ship</h3>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {/* 1️⃣ Data & Analytics Platforms */}
-                    <div className="text-center group">
-                      <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                        <Database className="w-8 h-8 text-white" strokeWidth={2} />
-                      </div>
-                      <h4 className="text-lg font-bold text-gray-900 mb-2">Data & Analytics Platforms</h4>
-                      <p className="text-sm text-gray-700 mb-1">Modern ELT/ETL pipelines, data contracts, and observability-first analytics. Outcome: versioned, governed, and trusted datasets for AI and decision workflows.</p>
-                      <p className="text-xs text-gray-500">Stack: dbt · Airbyte/Fivetran · BigQuery/Snowflake · Dagster/Airflow · Great Expectations · DataHub · Feast</p>
-                      <p className="text-xs text-gray-500 mt-1">Add‑ons: data lineage, contracts, and feature stores for model‑ready pipelines.</p>
-                    </div>
-
-                    {/* 2️⃣ Applied GenAI Systems */}
+                    {/* 1️⃣ GenAI & Machine Learning */}
                     <div className="text-center group">
                       <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                         <BrainCircuit className="w-8 h-8 text-white" strokeWidth={2} />
                       </div>
-                      <h4 className="text-lg font-bold text-gray-900 mb-2">Applied GenAI Systems</h4>
-                      <p className="text-sm text-gray-700 mb-1">RAG pipelines, fine‑tuned LLMs, and Model Context Protocol (MCP) integrations. Outcome: grounded, explainable AI with low latency and predictable cost.</p>
-                      <p className="text-xs text-gray-500">Stack: PyTorch · OpenAI/VLLM · Qdrant/Weaviate · LangChain/LlamaIndex · MCP · Traceloop · Evals</p>
-                      <p className="text-xs text-gray-500 mt-1">Add‑ons: observability, evaluation harnesses, and prompt versioning for production.</p>
+                      <h4 className="text-lg font-bold text-gray-900 mb-2">GenAI & Machine Learning</h4>
+                      <p className="text-sm text-gray-700 mb-1">End-to-end AI solutions from model development to production deployment. Building intelligent systems that solve real business problems.</p>
+                      <p className="text-xs text-gray-500">Stack: Python (Pandas, NumPy, Scikit-learn) · PyTorch · TensorFlow · Vector Embeddings · Computer Vision (CNNs, RNNs, LSTM) · Graph Neural Networks</p>
+                      <p className="text-xs text-gray-500 mt-1">GenAI: LLM Fine-tuning · RAG · Prompt Engineering · MCP · AI Agents · Vector DBs (Pinecone, Qdrant, Weaviate)</p>
                     </div>
 
-                    {/* 3️⃣ Cloud, MLOps & Delivery */}
+                    {/* 2️⃣ Data Engineering & Analytics */}
+                    <div className="text-center group">
+                      <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <Database className="w-8 h-8 text-white" strokeWidth={2} />
+                      </div>
+                      <h4 className="text-lg font-bold text-gray-900 mb-2">Data Engineering & Analytics</h4>
+                      <p className="text-sm text-gray-700 mb-1">Robust data pipelines and analytics platforms. From raw data to actionable insights with modern data stack technologies.</p>
+                      <p className="text-xs text-gray-500">Stack: dbt · Airbyte · SQL · Snowflake · AWS Redshift · BigQuery · GCS · CloudSQL · CI/CD (GitLab, Azure DevOps)</p>
+                      <p className="text-xs text-gray-500 mt-1">BI & Viz: Power BI · Looker · MicroStrategy · Streamlit · Excel · Google Sheets</p>
+                    </div>
+
+                    {/* 3️⃣ Cloud & Production Systems */}
                     <div className="text-center group">
                       <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-teal-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                         <Cloud className="w-8 h-8 text-white" strokeWidth={2} />
                       </div>
-                      <h4 className="text-lg font-bold text-gray-900 mb-2">Cloud, MLOps & Delivery</h4>
-                      <p className="text-sm text-gray-700 mb-1">Containerized AI workloads with CI/CD, IaC, and scalable serving. Outcome: repeatable deploys, secure environments, and clear rollback plans.</p>
-                      <p className="text-xs text-gray-500">Stack: Docker · Kubernetes · Terraform · GCP/Azure · FastAPI · MLflow · ArgoCD · Grafana/Prometheus</p>
-                      <p className="text-xs text-gray-500 mt-1">Add‑ons: autoscaling GenAI inference and managed vector DBs (Pinecone, Zilliz, Vertex AI Matching Engine).</p>
+                      <h4 className="text-lg font-bold text-gray-900 mb-2">Cloud & Production Systems</h4>
+                      <p className="text-sm text-gray-700 mb-1">Scalable cloud infrastructure and production-ready AI systems. From development to deployment with enterprise-grade reliability.</p>
+                      <p className="text-xs text-gray-500">Stack: GCP (Vertex AI, Cloud Run) · Azure (Data Factory, Synapse, Databricks) · AWS (Lambda, SageMaker) · Docker · Kubernetes</p>
+                      <p className="text-xs text-gray-500 mt-1">APIs & Deploy: FastAPI · FastMCP · REST APIs · Pydantic · OpenTelemetry · Redis</p>
                     </div>
                   </div>
                 </div>
@@ -429,90 +429,7 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* Projects Section */}
-      <Section 
-        id="projects" 
-        title="My Projects" 
-        subtitle="Discover some of my recent projects and open source contributions"
-        className="bg-gradient-to-br from-gray-50 to-white"
-      >
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {projectsData.map((project, index) => (
-            <div key={project.id} className="group">
-              <div className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100 hover:-translate-y-2 transform">
-                <div className="p-8">
-                  <div className="flex items-start justify-between mb-6">
-                    <div className="flex-1">
-                      <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors">
-                        {project.title}
-                      </h3>
-                      <p className="text-gray-600 leading-relaxed mb-6">
-                        {project.description}
-                      </p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {project.technologies.map((tech, techIndex) => (
-                      <span 
-                        key={techIndex}
-                        className="px-4 py-2 bg-gradient-to-r from-primary-50 to-primary-100 text-primary-700 rounded-full text-sm font-medium border border-primary-200 hover:from-primary-100 hover:to-primary-200 transition-all duration-300"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                  
-                  <div className="flex gap-4">
-                    {project.githubUrl && (
-                      <a 
-                        href={project.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center px-6 py-3 bg-gray-900 text-white rounded-xl hover:bg-gray-800 transition-all duration-300 font-medium group"
-                      >
-                        <svg className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform duration-300" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                        </svg>
-                        View Code
-                      </a>
-                    )}
-                    {project.demoUrl && (
-                      <a 
-                        href={project.demoUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center px-6 py-3 bg-primary-600 text-white rounded-xl hover:bg-primary-700 transition-all duration-300 font-medium group"
-                      >
-                        <svg className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                        </svg>
-                        Live Demo
-                      </a>
-                    )}
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-        
-        <div className="text-center mt-12">
-          <a 
-            href={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/projects`}
-            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-2xl hover:from-primary-700 hover:to-primary-800 transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transform"
-          >
-            View All Projects
-            <svg className="w-6 h-6 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </a>
-        </div>
-      </Section>
-
-      {/* Contact CTA Section (moved earlier, removed secondary button) */}
-
-      {/* Articles Section (moved above Freelance Success) */}
+      {/* Articles Section */}
       <Section 
         id="articles" 
         title="Latest Articles" 
@@ -538,6 +455,74 @@ export default function Home() {
         </div>
       </Section>
 
+      {/* Projects Section */}
+      <Section 
+        id="projects" 
+        title="My Projects" 
+        subtitle="Discover some of my recent projects and open source contributions"
+        className="bg-gradient-to-br from-gray-50 to-white"
+      >
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          {projectsData.map((project, index) => (
+            <div key={project.id} className="group flex">
+              <div className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100 hover:-translate-y-2 transform flex flex-col w-full">
+                <div className="p-8 flex flex-col flex-grow">
+                  <div className="mb-6">
+                      <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors">
+                        {project.title}
+                      </h3>
+                      <p className="text-gray-600 leading-relaxed mb-6">
+                        {project.description}
+                      </p>
+                  </div>
+                  
+                  <div className="flex flex-wrap gap-2 mb-6 flex-grow">
+                    {project.technologies.map((tech, techIndex) => (
+                      <span 
+                        key={techIndex}
+                        className="px-4 py-2 bg-gradient-to-r from-primary-50 to-primary-100 text-primary-700 rounded-full text-sm font-medium border border-primary-200 hover:from-primary-100 hover:to-primary-200 transition-all duration-300"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                  
+                  <div className="mt-auto">
+                    {project.githubUrl && (
+                      <a 
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center px-6 py-3 bg-gray-900 text-white rounded-xl hover:bg-gray-800 transition-all duration-300 font-medium group"
+                      >
+                        <svg className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform duration-300" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                        View Code
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+        
+        <div className="text-center mt-12">
+          <a 
+            href={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/projects`}
+            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-2xl hover:from-primary-700 hover:to-primary-800 transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transform"
+          >
+            View All Projects
+            <svg className="w-6 h-6 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
+      </Section>
+
+      {/* Contact CTA Section (moved earlier, removed secondary button) */}
+
       {/* Recommendations and Clients Testimonials Preview */}
       <Section 
         title="Recommendations and Clients Testimonials" 
@@ -546,7 +531,7 @@ export default function Home() {
       >
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {freelanceData.slice(0, 2).map((project) => (
+            {freelanceData.map((project) => (
               <div key={project.id} className="group">
                 <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:-translate-y-1 transform">
                   {/* Project Header */}
@@ -563,6 +548,7 @@ export default function Home() {
                       </h3>
                       <p className="text-primary-600 font-semibold text-sm">{project.client}</p>
                     </div>
+                    {project.testimonial.source !== "LinkedIn" && (
                     <div className="flex">
                       {Array.from({ length: project.testimonial.rating }, (_, i) => (
                         <svg key={i} className="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
@@ -570,6 +556,7 @@ export default function Home() {
                         </svg>
                       ))}
                     </div>
+                    )}
                   </div>
                   
                   {/* Testimonial */}
@@ -578,6 +565,7 @@ export default function Home() {
                   </blockquote>
                   
                   {/* Client Info */}
+                  <div className="flex items-center justify-between">
                   <div className="flex items-center">
                     <div className="w-8 h-8 bg-gradient-to-br from-primary-500 to-primary-700 rounded-full flex items-center justify-center text-white font-semibold text-xs mr-3">
                       {project.testimonial.author.split(' ').map(n => n[0]).join('')}
@@ -586,6 +574,17 @@ export default function Home() {
                       <p className="font-semibold text-gray-900 text-sm">{project.testimonial.author}</p>
                       <p className="text-xs text-gray-600">{project.testimonial.position}</p>
                     </div>
+                  </div>
+                    
+                    {/* LinkedIn Source Indicator */}
+                    {project.testimonial.source === "LinkedIn" && (
+                      <div className="flex items-center gap-1 px-2 py-1 bg-blue-50 rounded-full">
+                        <svg className="w-3 h-3 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                        <span className="text-xs text-blue-600 font-medium">LinkedIn</span>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
@@ -606,7 +605,314 @@ export default function Home() {
         </div>
       </Section>
 
-      
+      {/* Certifications Section */}
+      <Section 
+        title="Professional Certifications" 
+        subtitle="Industry-recognized certifications validating my expertise"
+        className="bg-white"
+      >
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Hugging Face Certifications */}
+            <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 transform">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-xl flex items-center justify-center">
+                  <span className="text-white font-bold text-lg">🤗</span>
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900">AI Agents: Fundamentals</h3>
+                  <p className="text-sm text-gray-600">Hugging Face</p>
+                </div>
+              </div>
+              <div className="flex flex-wrap gap-2 mb-4">
+                <span className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs">AI Agents</span>
+                <span className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs">LangChain</span>
+                <span className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs">LLMs</span>
+                <span className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs">Prompt Engineering</span>
+              </div>
+              <a href="https://cas-bridge.xethub.hf.co/xet-bridge-us/67a47037749ea2c4b9fafd4b/c7dc4fc98b0df2925dfdfb075f50028c783a535a338598adba313653d7b5a9ea?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=cas%2F20251017%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20251017T225024Z&X-Amz-Expires=3600&X-Amz-Signature=e490d5a1a82b3bdf6e15ee6cdceecafa80be5ee60d023ef227121ea9e2d7f03b&X-Amz-SignedHeaders=host&X-Xet-Cas-Uid=68457b27d29ba7be47693319&response-content-disposition=inline%3B+filename*%3DUTF-8%27%272025-06-29.png%3B+filename%3D%222025-06-29.png%22%3B&response-content-type=image%2Fpng&x-id=GetObject&Expires=1760745024&Policy=eyJTdGF0ZW1lbnQiOlt7IkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc2MDc0NTAyNH19LCJSZXNvdXJjZSI6Imh0dHBzOi8vY2FzLWJyaWRnZS54ZXRodWIuaGYuY28veGV0LWJyaWRnZS11cy82N2E0NzAzNzc0OWVhMmM0YjlmYWZkNGIvYzdkYzRmYzk4YjBkZjI5MjVkZmRmYjA3NWY1MDAyOGM3ODNhNTM1YTMzODU5OGFkYmEzMTM2NTNkN2I1YTllYSoifV19&Signature=KTxa%7EP1751xRFAFcskNMlHDbGFbqSBpm5j0i46RQL4uuJKGc7xLhMxqNhiXYN%7ErPibh0b%7E9dZnnVCk56V2cNs7oyyfMo4TKF1iGg-7LPFbHEuWQCvt6DXAXf%7E26lYI1mgEy1l-1cIV-O3vVhbcEU1JGM9fR80BkLJrSDVJmwohSP8BFv7rCkB-inSDoISL-Ql-B7cr05sQW7w%7EPl1fTVPeKxqaYbkASWUBChETPlWNy-kh0qaIff4lZUSg%7EiKHywIWvNQMt4f1U7SNzfkjiDusW8dVWXa1JTyu%7E0A1VkRIaCZbxy4e8OfkbGywQ2g9eB5PdlNcqKer5m8UgKeodvzg__&Key-Pair-Id=K2L8F4GPSG1IFC" target="_blank" rel="noopener noreferrer" className="text-orange-600 hover:text-orange-800 text-sm font-medium flex items-center">
+                View Credential
+                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
+
+            <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 transform">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-xl flex items-center justify-center">
+                  <span className="text-white font-bold text-lg">🤗</span>
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900">LLMs Fine-Tuning</h3>
+                  <p className="text-sm text-gray-600">Hugging Face</p>
+                </div>
+              </div>
+              <div className="flex flex-wrap gap-2 mb-4">
+                <span className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs">Fine-Tuning</span>
+                <span className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs">PyTorch</span>
+                <span className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs">NLP</span>
+                <span className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs">Deep Learning</span>
+              </div>
+              <a href="https://huggingface.co/learn/llm-course/chapter3/7?fw=pt" target="_blank" rel="noopener noreferrer" className="text-orange-600 hover:text-orange-800 text-sm font-medium flex items-center">
+                View Credential
+                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
+
+            <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 transform">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-xl flex items-center justify-center">
+                  <span className="text-white font-bold text-lg">🤗</span>
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900">LLMs Fundamentals</h3>
+                  <p className="text-sm text-gray-600">Hugging Face</p>
+                </div>
+              </div>
+              <div className="flex flex-wrap gap-2 mb-4">
+                <span className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs">Transformers</span>
+                <span className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs">Attention</span>
+                <span className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs">AI Ethics</span>
+                <span className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs">Bias Awareness</span>
+              </div>
+              <a href="https://huggingface.co/learn/llm-course/chapter1/11?fw=pt" target="_blank" rel="noopener noreferrer" className="text-orange-600 hover:text-orange-800 text-sm font-medium flex items-center">
+                View Credential
+                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
+
+            <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 transform">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-xl flex items-center justify-center">
+                  <span className="text-white font-bold text-lg">🤗</span>
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900">Model Context Protocol</h3>
+                  <p className="text-sm text-gray-600">Hugging Face</p>
+                </div>
+              </div>
+              <div className="flex flex-wrap gap-2 mb-4">
+                <span className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs">MCP</span>
+                <span className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs">Multi-Agent</span>
+                <span className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs">Tool Chaining</span>
+                <span className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs">REST APIs</span>
+              </div>
+              <a href="#" target="_blank" rel="noopener noreferrer" className="text-orange-600 hover:text-orange-800 text-sm font-medium flex items-center">
+                View Credential
+                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
+
+            {/* dbt Labs Certification */}
+            <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 transform">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl flex items-center justify-center">
+                  <span className="text-white font-bold text-lg">dbt</span>
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900">dbt Fundamentals</h3>
+                  <p className="text-sm text-gray-600">dbt Labs</p>
+                </div>
+              </div>
+              <div className="flex flex-wrap gap-2 mb-4">
+                <span className="px-2 py-1 bg-orange-50 text-orange-700 rounded text-xs">Data Analytics</span>
+                <span className="px-2 py-1 bg-orange-50 text-orange-700 rounded text-xs">Data Modeling</span>
+                <span className="px-2 py-1 bg-orange-50 text-orange-700 rounded text-xs">SQL</span>
+                <span className="px-2 py-1 bg-orange-50 text-orange-700 rounded text-xs">BigQuery</span>
+              </div>
+              <a href="https://credentials.getdbt.com/fda4da24-9c2b-40e9-8f4b-5070c5cfce76" target="_blank" rel="noopener noreferrer" className="text-orange-600 hover:text-orange-800 text-sm font-medium flex items-center">
+                View Credential
+                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
+
+            {/* LinkedIn Certifications */}
+            <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 transform">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-800 rounded-xl flex items-center justify-center">
+                  <span className="text-white font-bold text-lg">in</span>
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900">Google Cloud Foundations</h3>
+                  <p className="text-sm text-gray-600">LinkedIn</p>
+                </div>
+              </div>
+              <div className="flex flex-wrap gap-2 mb-4">
+                <span className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs">GCP</span>
+                <span className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs">BigQuery</span>
+                <span className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs">GCS</span>
+              </div>
+              <a href="https://www.linkedin.com/learning/certificates/d10eacbb4859c9387dfbcefbf9c345f7d65193875dc1b37077c0c29ed014bfd0?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3B2ojbgXVzSH6PLSIUwx0%2FEw%3D%3D" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 text-sm font-medium flex items-center">
+                View Credential
+                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
+
+            <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 transform">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-800 rounded-xl flex items-center justify-center">
+                  <span className="text-white font-bold text-lg">in</span>
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900">Agile Project Management</h3>
+                  <p className="text-sm text-gray-600">LinkedIn</p>
+                </div>
+              </div>
+              <div className="flex flex-wrap gap-2 mb-4">
+                <span className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs">Jira</span>
+                <span className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs">Scrum</span>
+                <span className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs">Kanban</span>
+              </div>
+              <a href="https://www.linkedin.com/learning/certificates/43c6197863f0c9a38446252f8d62a5de36f557383e3f4e86e621a5543f89e299?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3B2ojbgXVzSH6PLSIUwx0%2FEw%3D%3D" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 text-sm font-medium flex items-center">
+                View Credential
+                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
+
+            <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 transform">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-800 rounded-xl flex items-center justify-center">
+                  <span className="text-white font-bold text-lg">in</span>
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900">Telling Stories with Data</h3>
+                  <p className="text-sm text-gray-600">LinkedIn</p>
+                </div>
+              </div>
+              <div className="flex flex-wrap gap-2 mb-4">
+                <span className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs">Data Visualization</span>
+                <span className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs">Storytelling</span>
+              </div>
+              <a href="https://www.linkedin.com/learning/certificates/adff1543a85906b1095fccab482d43463e96d6a63ca7bd591dfcf1241850a6ba?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3B2ojbgXVzSH6PLSIUwx0%2FEw%3D%3D" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 text-sm font-medium flex items-center">
+                View Credential
+                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
+
+            {/* 365 Data Science Certifications */}
+            <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 transform">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-700 rounded-xl flex items-center justify-center">
+                  <span className="text-white font-bold text-lg">365</span>
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900">Data Analyst & Power BI</h3>
+                  <p className="text-sm text-gray-600">365 Data Science</p>
+                </div>
+              </div>
+              <div className="flex flex-wrap gap-2 mb-4">
+                <span className="px-2 py-1 bg-green-50 text-green-700 rounded text-xs">Power BI</span>
+                <span className="px-2 py-1 bg-green-50 text-green-700 rounded text-xs">Data Analysis</span>
+              </div>
+              <a href="#" className="text-green-600 hover:text-green-800 text-sm font-medium flex items-center">
+                View Credential
+                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
+
+            <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 transform">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-700 rounded-xl flex items-center justify-center">
+                  <span className="text-white font-bold text-lg">365</span>
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900">Data Analyst & Power BI</h3>
+                  <p className="text-sm text-gray-600">365 Data Science</p>
+                </div>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                <span className="px-2 py-1 bg-green-50 text-green-700 rounded text-xs">Power BI</span>
+                <span className="px-2 py-1 bg-green-50 text-green-700 rounded text-xs">Data Analysis</span>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 transform">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-700 rounded-xl flex items-center justify-center">
+                  <span className="text-white font-bold text-lg">365</span>
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900">SQL & MySQL Specialist</h3>
+                  <p className="text-sm text-gray-600">365 Data Science</p>
+                </div>
+              </div>
+              <div className="flex flex-wrap gap-2 mb-4">
+                <span className="px-2 py-1 bg-green-50 text-green-700 rounded text-xs">SQL</span>
+                <span className="px-2 py-1 bg-green-50 text-green-700 rounded text-xs">MySQL</span>
+                <span className="px-2 py-1 bg-green-50 text-green-700 rounded text-xs">Databases</span>
+              </div>
+              <a href="#" className="text-green-600 hover:text-green-800 text-sm font-medium flex items-center">
+                View Credential
+                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
+
+            {/* Other Certifications */}
+            <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 transform">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-gray-600 to-gray-800 rounded-xl flex items-center justify-center">
+                  <span className="text-white font-bold text-lg">Git</span>
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900">Git and GitHub</h3>
+                  <p className="text-sm text-gray-600">ECT Global</p>
+                </div>
+              </div>
+              <div className="flex flex-wrap gap-2 mb-4">
+                <span className="px-2 py-1 bg-gray-50 text-gray-700 rounded text-xs">Version Control</span>
+                <span className="px-2 py-1 bg-gray-50 text-gray-700 rounded text-xs">GitHub</span>
+              </div>
+              <a href="#" className="text-gray-600 hover:text-gray-800 text-sm font-medium flex items-center">
+                View Credential
+                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
+
+            <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 transform">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-700 rounded-xl flex items-center justify-center">
+                  <span className="text-white font-bold text-lg">TOEIC</span>
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900">TOEIC Score</h3>
+                  <p className="text-sm text-gray-600">985/990</p>
+                </div>
+              </div>
+              <div className="flex flex-wrap gap-2 mb-4">
+                <span className="px-2 py-1 bg-purple-50 text-purple-700 rounded text-xs">English Proficiency</span>
+                <span className="px-2 py-1 bg-purple-50 text-purple-700 rounded text-xs">Business English</span>
+              </div>
+              <a href="#" className="text-purple-600 hover:text-purple-800 text-sm font-medium flex items-center">
+                View Credential
+                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </Section>
 
       {/* Education Section */}
       <Section 
@@ -725,12 +1031,12 @@ export default function Home() {
                     <div className="ml-6">
                       <p className="text-sm font-semibold text-gray-500 uppercase tracking-wide">GitHub</p>
                       <a 
-                        href="https://github.com/Isendark1" 
+                        href="https://github.com/nmohammi" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="text-lg text-gray-900 hover:text-primary-600 transition-colors font-medium"
                       >
-                        github.com/Isendark1
+                        github.com/nmohammi
                       </a>
                     </div>
                   </div>

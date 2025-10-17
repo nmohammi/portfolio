@@ -132,12 +132,12 @@ export default function ContactPage() {
                     <div className="ml-6">
                       <p className="text-sm font-semibold text-gray-500 uppercase tracking-wide">GitHub</p>
                       <a 
-                        href="https://github.com/Isendark1" 
+                        href="https://github.com/nmohammi" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="text-lg text-gray-900 hover:text-primary-600 transition-colors font-medium"
                       >
-                        github.com/Isendark1
+                        github.com/nmohammi
                       </a>
                     </div>
                   </div>

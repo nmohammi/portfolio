@@ -4,6 +4,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { useTheme } from 'next-themes';
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
 const NavBar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -17,12 +19,12 @@ const NavBar: React.FC = () => {
   }, []);
 
   const navItems = [
-    { href: '/', label: 'Home' },
-    { href: '/experience', label: 'Experience' },
-    { href: '/projects', label: 'Projects' },
-    { href: '/education', label: 'Certifications & Education' },
-    { href: '/articles', label: 'Articles' },
-    { href: '/contact', label: 'Contact' },
+    { href: `${basePath}/`, label: 'Home' },
+    { href: `${basePath}/experience`, label: 'Experience' },
+    { href: `${basePath}/projects`, label: 'Projects' },
+    { href: `${basePath}/education`, label: 'Certifications & Education' },
+    { href: `${basePath}/articles`, label: 'Articles' },
+    { href: `${basePath}/contact`, label: 'Contact' },
   ];
 
   const isActiveLink = (href: string) => {
@@ -82,7 +84,7 @@ const NavBar: React.FC = () => {
       <div className="container">
         <div className="flex items-center justify-between h-20">
           <div className="flex-shrink-0">
-            <Link href="/" className="text-2xl font-bold bg-gradient-to-r from-primary-600 to-primary-800 bg-clip-text text-transparent hover:from-primary-700 hover:to-primary-900 transition-all duration-300">
+            <Link href={`${basePath}/`} className="text-2xl font-bold bg-gradient-to-r from-primary-600 to-primary-800 bg-clip-text text-transparent hover:from-primary-700 hover:to-primary-900 transition-all duration-300">
               My Portfolio
             </Link>
           </div>

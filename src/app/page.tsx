@@ -375,7 +375,7 @@ export default function Home() {
                     {/* View Details Button */}
                     <div className="flex justify-center mb-4">
                       <a 
-                        href={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/experience`}
+                        href="/experience"
                         className="inline-flex items-center px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors text-sm font-medium"
                       >
                         <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -418,7 +418,7 @@ export default function Home() {
         
         <div className="text-center mt-12">
           <a 
-            href={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/experience`}
+            href="/experience"
             className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-2xl hover:from-primary-700 hover:to-primary-800 transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transform"
           >
             View Full Experience
@@ -444,7 +444,7 @@ export default function Home() {
         
         <div className="text-center mt-12">
           <a 
-            href={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/articles`}
+            href="/articles"
             className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-2xl hover:from-primary-700 hover:to-primary-800 transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transform"
           >
             View All Articles
@@ -510,7 +510,7 @@ export default function Home() {
         
         <div className="text-center mt-12">
           <a 
-            href={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/projects`}
+            href="/projects"
             className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-2xl hover:from-primary-700 hover:to-primary-800 transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transform"
           >
             View All Projects
@@ -593,7 +593,7 @@ export default function Home() {
           
           <div className="text-center mt-8">
             <a 
-              href={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/experience`}
+              href="/experience"
               className="inline-flex items-center px-6 py-3 bg-white text-primary-600 rounded-xl hover:bg-primary-50 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl border border-primary-200"
             >
               View All Client Testimonials
@@ -961,7 +961,7 @@ export default function Home() {
 
         <div className="text-center mt-12">
           <a 
-            href={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/education`}
+            href="/education"
             className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-2xl hover:from-primary-700 hover:to-primary-800 transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transform"
           >
             View Full Education

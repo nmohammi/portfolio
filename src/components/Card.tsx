@@ -38,9 +38,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   demoUrl,
   image
 }) => {
-  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
   const resolvedImage = image
-    ? (image.startsWith('http') ? image : `${basePath}${image.startsWith('/') ? image : `/${image}`}`)
+    ? (image.startsWith('http') ? image : `${image.startsWith('/') ? image : `/${image}`}`)
     : undefined;
 
   const visibleTech = technologies.slice(0, 6);

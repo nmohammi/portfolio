@@ -538,9 +538,9 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* Freelance Success Preview */}
+      {/* Recommendations and Clients Testimonials Preview */}
       <Section 
-        title="Freelance Success" 
+        title="Recommendations and Clients Testimonials" 
         subtitle="Client testimonials and project highlights"
         className="bg-gradient-to-br from-gray-50 to-white"
       >

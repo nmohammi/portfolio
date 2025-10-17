@@ -242,9 +242,9 @@ export default function ExperiencePage() {
         </div>
       </Section>
 
-      {/* Freelance & Client Testimonials */}
+      {/* Recommendations and Clients Testimonials */}
       <Section 
-        title="Freelance & Client Success" 
+        title="Recommendations and Clients Testimonials" 
         subtitle="Real projects, real results, real testimonials from satisfied clients"
         className="bg-gradient-to-br from-gray-50 to-white"
       >

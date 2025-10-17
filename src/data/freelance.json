@@ -14,7 +14,7 @@
       "rating": 5,
       "source": "LinkedIn"
     },
-    "screenshot": "/screenshots/sg-analytics.jpg"
+    "screenshot": "./screenshots/sg-analytics.jpg"
   },
   {
     "id": 2,
@@ -31,6 +31,6 @@
       "rating": 5,
       "source": "LinkedIn"
     },
-    "screenshot": "/screenshots/chu-data-infrastructure.jpg"
+    "screenshot": "./screenshots/chu-data-infrastructure.jpg"
   }
 ]

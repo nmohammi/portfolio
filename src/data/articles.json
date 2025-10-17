@@ -8,7 +8,7 @@
     "category": "AI Engineering",
     "tags": ["Vector Databases", "RAG", "GenAI", "Embeddings", "AI Infrastructure", "Machine Learning", "Data Engineering", "Database Design", "Milvus", "Pinecone", "Qdrant", "Weaviate", "Chroma", "FAISS", "Chroma", "Pinecone"],
     "url": "https://medium.com/@nasrmohammi/how-to-choose-the-right-vector-database-as-the-foundation-of-your-ai-stack-a99eef6924e8",
-    "image": "/articles/vectordb.png"
+    "image": "./articles/vectordb.png"
   },
   {
     "id": 2,

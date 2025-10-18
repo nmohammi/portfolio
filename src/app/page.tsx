@@ -27,6 +27,13 @@ function getImagePath(imagePath: string): string {
   return imagePath;
 }
 
+function getCompanyLogo(company: string): string | undefined {
+  for (const [key, path] of Object.entries(companyLogoMap)) {
+    if (company.includes(key)) return path;
+  }
+  return undefined;
+}
+
 export default function Home() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();

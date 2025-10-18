@@ -1,89 +1,64 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import { CheckCircle, X } from 'lucide-react';
 
 interface NotificationProps {
-  message: string;
-  type: 'success' | 'error' | 'info';
-  isVisible: boolean;
+  show: boolean;
   onClose: () => void;
-  duration?: number;
+  type: 'success' | 'error';
+  title: string;
+  message: string;
 }
 
-export const Notification: React.FC<NotificationProps> = ({
-  message,
-  type,
-  isVisible,
-  onClose,
-  duration = 5000
+export const Notification: React.FC<NotificationProps> = ({ 
+  show, 
+  onClose, 
+  type, 
+  title, 
+  message 
 }) => {
   useEffect(() => {
-    if (isVisible && duration > 0) {
+    if (show) {
       const timer = setTimeout(() => {
         onClose();
-      }, duration);
+      }, 5000); // Auto-close after 5 seconds
+      
       return () => clearTimeout(timer);
     }
-  }, [isVisible, duration, onClose]);
+  }, [show, onClose]);
 
-  if (!isVisible) return null;
-
-  const getTypeStyles = () => {
-    switch (type) {
-      case 'success':
-        return 'bg-green-50 border-green-200 text-green-800';
-      case 'error':
-        return 'bg-red-50 border-red-200 text-red-800';
-      case 'info':
-        return 'bg-blue-50 border-blue-200 text-blue-800';
-      default:
-        return 'bg-gray-50 border-gray-200 text-gray-800';
-    }
-  };
-
-  const getIcon = () => {
-    switch (type) {
-      case 'success':
-        return (
-          <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
-        );
-      case 'error':
-        return (
-          <svg className="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
-        );
-      case 'info':
-        return (
-          <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
-        );
-    }
-  };
+  if (!show) return null;
 
   return (
-    <div className="fixed top-4 right-4 z-50 animate-in slide-in-from-right-full duration-300">
-      <div className={`max-w-md p-4 rounded-xl border-2 shadow-lg ${getTypeStyles()}`}>
-        <div className="flex items-start space-x-3">
+    <div className="fixed top-4 right-4 z-50 max-w-md">
+      <div className={`rounded-xl shadow-2xl border-l-4 p-6 transform transition-all duration-300 ease-in-out ${
+        type === 'success' 
+          ? 'bg-green-50 border-green-500 text-green-800' 
+          : 'bg-red-50 border-red-500 text-red-800'
+      } ${show ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'}`}>
+        <div className="flex items-start">
           <div className="flex-shrink-0">
-            {getIcon()}
+            {type === 'success' ? (
+              <CheckCircle className="h-6 w-6 text-green-500" />
+            ) : (
+              <X className="h-6 w-6 text-red-500" />
+            )}
           </div>
-          <div className="flex-1">
-            <p className="text-sm font-medium whitespace-pre-line">
-              {message}
-            </p>
+          <div className="ml-3 flex-1">
+            <h3 className="text-lg font-semibold mb-1">{title}</h3>
+            <p className="text-sm leading-relaxed">{message}</p>
           </div>
-          <button
-            onClick={onClose}
-            className="flex-shrink-0 text-gray-400 hover:text-gray-600 transition-colors"
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
+          <div className="ml-4 flex-shrink-0">
+            <button
+              onClick={onClose}
+              className={`rounded-md p-1 hover:bg-opacity-20 transition-colors ${
+                type === 'success' ? 'hover:bg-green-600' : 'hover:bg-red-600'
+              }`}
+            >
+              <X className="h-4 w-4" />
+            </button>
+          </div>
         </div>
       </div>
     </div>

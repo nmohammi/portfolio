@@ -5,6 +5,20 @@ import Image from 'next/image'
 import educationData from '@/data/education.json'
 import Link from 'next/link'
 
+function getImagePath(imagePath: string): string {
+  // For subfolder images, we need to handle basePath manually
+  if (imagePath.startsWith('/education/') || imagePath.startsWith('/articles/')) {
+    // Check if we're on GitHub Pages by looking at the current URL
+    if (typeof window !== 'undefined') {
+      const isGitHubPages = window.location.hostname === 'nmohammi.github.io' || window.location.pathname.startsWith('/portfolio');
+      return `${isGitHubPages ? '/portfolio' : ''}${imagePath}`;
+    }
+    // Fallback for SSR - assume GitHub Pages
+    return `/portfolio${imagePath}`;
+  }
+  return imagePath;
+}
+
 export default function EducationPage() {
   return (
     <div className="pt-20">
@@ -330,7 +344,7 @@ export default function EducationPage() {
                 {/* Dot with logo centered on rail */}
                 <div className="absolute left-6 -translate-x-1/2 transform mt-1 w-12 h-12 rounded-full bg-white border-2 border-primary-300 shadow flex items-center justify-center">
                   {edu.logo ? (
-                    <Image src={edu.logo} alt={`${edu.institution} logo`} width={40} height={40} className="object-contain" />
+                    <Image src={getImagePath(edu.logo)} alt={`${edu.institution} logo`} width={40} height={40} className="object-contain" unoptimized />
                   ) : null}
                 </div>
                 {/* Card */}
@@ -340,7 +354,7 @@ export default function EducationPage() {
                     <div className="flex items-center gap-2 mb-1">
                       {edu.logo && (
                         <div className="w-7 h-7 rounded-md overflow-hidden bg-white border border-gray-100 flex items-center justify-center">
-                          <Image src={edu.logo} alt={`${edu.institution} logo`} width={22} height={22} className="object-contain" />
+                          <Image src={getImagePath(edu.logo)} alt={`${edu.institution} logo`} width={22} height={22} className="object-contain" unoptimized />
                         </div>
                       )}
                       <p className="text-primary-600 font-medium">{edu.institution}</p>

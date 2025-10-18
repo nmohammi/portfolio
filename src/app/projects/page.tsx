@@ -32,7 +32,7 @@ export default function ProjectsPage() {
         )
       case 2: // Climate Risk - Square Management logo
         return (
-          <Image src="/square.png" alt="Square Management" width={32} height={32} className="object-contain" />
+          <Image src="/square.png" alt="Square Management" width={32} height={32} className="object-contain" unoptimized />
         )
       case 3: // CAPM
         return (

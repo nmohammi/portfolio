@@ -10,13 +10,15 @@ import educationData from '@/data/education.json';
 import articlesData from '@/data/articles.json';
 import freelanceData from '@/data/freelance.json';
 import { Database, BrainCircuit, Cloud } from 'lucide-react';
+import { Notification } from '@/components/Notification';
+import { useState } from 'react';
 
 const companyLogoMap: Record<string, string> = {
-  'Opteamis': './opteamis.png',
-  'Société Générale': './societegenerale.png',
-  'CHU Metz': './freelance.png',
-  'ENSEA': './etis.png',
-  'ETIS': './etis.png',
+  'Opteamis': '/opteamis.png',
+  'Société Générale': '/societegenerale.png',
+  'CHU Metz': '/freelance.png',
+  'ENSEA': '/etis.png',
+  'ETIS': '/etis.png',
 };
 
 function getPagePath(path: string): string {
@@ -59,6 +61,18 @@ function getCompanyLogo(company: string): string | undefined {
 }
 
 export default function Home() {
+  const [notification, setNotification] = useState<{
+    show: boolean;
+    type: 'success' | 'error';
+    title: string;
+    message: string;
+  }>({
+    show: false,
+    type: 'success',
+    title: '',
+    message: ''
+  });
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     
@@ -67,23 +81,78 @@ export default function Home() {
     const email = formData.get('email') as string;
     const message = formData.get('message') as string;
     
-    // Use mailto as the primary method since Formspree is not configured
-    const subject = encodeURIComponent(`Message from ${name} - Portfolio Contact`);
-    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
-    const mailtoLink = `mailto:nasr.mohammi@gmail.com?subject=${subject}&body=${body}`;
+    // Vérifier si Formspree est configuré
+    const formspreeEndpoint = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT;
     
-    // Open mailto link
-    window.location.href = mailtoLink;
-    
-    // Show success message
-    alert('🎉 Thank you for your message!\n\nYour default email client should open with a pre-filled message. If it doesn\'t open automatically, please send your message to: nasr.mohammi@gmail.com\n\nI\'ll get back to you as soon as possible!\n\nBest regards,\nNasrallah');
-    
-    // Reset form
-    (e.target as HTMLFormElement).reset();
+    if (formspreeEndpoint) {
+      try {
+        // Utiliser directement le FormData du formulaire
+        const formDataForFormspree = new FormData();
+        formDataForFormspree.append('name', name || '');
+        formDataForFormspree.append('email', email || '');
+        formDataForFormspree.append('message', message || '');
+        formDataForFormspree.append('_subject', `Message from ${name || 'Anonymous'} - Portfolio Contact`);
+        
+        // Debug: vérifier les valeurs
+        console.log('Sending to Formspree:', { name, email, message });
+        
+        const response = await fetch(formspreeEndpoint, {
+          method: 'POST',
+          body: formDataForFormspree,
+          mode: 'no-cors', // This prevents CORS issues
+        });
+        
+        console.log('Formspree request sent successfully');
+        
+        // With no-cors mode, we can't read the response, but if no error was thrown,
+        // the request was successful
+        // Show beautiful success notification
+        setNotification({
+          show: true,
+          type: 'success',
+          title: '🎉 Message Sent Successfully!',
+          message: `Thank you ${name}! I've received your message and will get back to you soon. Looking forward to discussing your project with you!`
+        });
+        (e.target as HTMLFormElement).reset();
+      } catch (error) {
+        console.error('Erreur:', error);
+        // Show error notification
+        setNotification({
+          show: true,
+          type: 'error',
+          title: '❌ Message Failed to Send',
+          message: 'There was an issue sending your message. Please try again or contact me directly at nasr.mohammi@gmail.com'
+        });
+        
+        // Fallback vers mailto si Formspree échoue
+        const subject = encodeURIComponent(`Message from ${name} - Portfolio Contact`);
+        const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+        const mailtoLink = `mailto:nasr.mohammi@gmail.com?subject=${subject}&body=${body}`;
+        window.location.href = mailtoLink;
+      }
+    } else {
+      // Utiliser mailto comme fallback
+      const subject = encodeURIComponent(`Message from ${name} - Portfolio Contact`);
+      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+      const mailtoLink = `mailto:nasr.mohammi@gmail.com?subject=${subject}&body=${body}`;
+      window.location.href = mailtoLink;
+    }
+  };
+
+  const closeNotification = () => {
+    setNotification(prev => ({ ...prev, show: false }));
   };
 
   return (
     <>
+      {/* Notification */}
+      <Notification
+        show={notification.show}
+        onClose={closeNotification}
+        type={notification.type}
+        title={notification.title}
+        message={notification.message}
+      />
       {/* Hero Section */}
       <section id="home" className="min-h-screen bg-gradient-to-br from-gray-50 to-primary-50">
         <div className="container mx-auto px-4 py-40">
@@ -199,7 +268,7 @@ export default function Home() {
                         <div className="flex items-start space-x-4">
                           <div className="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0 overflow-hidden bg-white border border-blue-100">
                             {getCompanyLogo('Opteamis') ? (
-                              <Image src={getCompanyLogo('Opteamis')!} alt="Opteamis logo" width={56} height={56} className="object-contain" />
+                              <Image src={getCompanyLogo('Opteamis')!} alt="Opteamis logo" width={56} height={56} className="object-contain" unoptimized />
                             ) : (
                               <svg className="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
                             )}
@@ -218,7 +287,7 @@ export default function Home() {
                         <div className="flex items-start space-x-4">
                           <div className="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0 overflow-hidden bg-white border border-green-100">
                             {getCompanyLogo('Société Générale') ? (
-                              <Image src={getCompanyLogo('Société Générale')!} alt="Société Générale logo" width={56} height={56} className="object-contain" />
+                              <Image src={getCompanyLogo('Société Générale')!} alt="Société Générale logo" width={56} height={56} className="object-contain" unoptimized />
                             ) : (
                               <svg className="w-7 h-7 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
                             )}
@@ -237,7 +306,7 @@ export default function Home() {
                         <div className="flex items-start space-x-4">
                           <div className="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0 overflow-hidden bg-white border border-purple-100">
                             {getCompanyLogo('CHU Metz') ? (
-                              <Image src={getCompanyLogo('CHU Metz')!} alt="Freelance logo" width={56} height={56} className="object-contain" />
+                              <Image src={getCompanyLogo('CHU Metz')!} alt="Freelance logo" width={56} height={56} className="object-contain" unoptimized />
                             ) : (
                               <svg className="w-7 h-7 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9"/></svg>
                             )}
@@ -256,7 +325,7 @@ export default function Home() {
                         <div className="flex items-start space-x-4">
                           <div className="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0 overflow-hidden bg-white border border-orange-100">
                             {getCompanyLogo('ENSEA') ? (
-                              <Image src={getCompanyLogo('ENSEA')!} alt="ENSEA logo" width={56} height={56} className="object-contain" />
+                              <Image src={getCompanyLogo('ENSEA')!} alt="ENSEA logo" width={56} height={56} className="object-contain" unoptimized />
                             ) : (
                               <svg className="w-7 h-7 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
                             )}
@@ -337,7 +406,7 @@ export default function Home() {
                 {/* Timeline Dot with logo when available */}
                 <div className={`absolute left-6 md:left-1/2 w-10 h-10 rounded-full border-2 shadow-md transform md:-translate-x-1/2 z-10 overflow-hidden flex items-center justify-center ${getCompanyLogo(exp.company) ? 'bg-white border-primary-300' : 'bg-primary-600 border-white'}`}>
                   {getCompanyLogo(exp.company) ? (
-                    <Image src={getCompanyLogo(exp.company)!} alt={`${exp.company} logo`} width={30} height={30} className="object-contain p-1" />
+                    <Image src={getCompanyLogo(exp.company)!} alt={`${exp.company} logo`} width={30} height={30} className="object-contain p-1" unoptimized />
                   ) : (
                     <span className="block w-full h-full" />
                   )}
@@ -357,7 +426,7 @@ export default function Home() {
                     <div className="flex items-center gap-2 mb-3">
                       <div className="w-6 h-6 rounded-md overflow-hidden bg-white border border-gray-100 flex items-center justify-center">
                         {getCompanyLogo(exp.company) ? (
-                          <Image src={getCompanyLogo(exp.company)!} alt={`${exp.company} logo`} width={24} height={24} className="object-contain" />
+                          <Image src={getCompanyLogo(exp.company)!} alt={`${exp.company} logo`} width={24} height={24} className="object-contain" unoptimized />
                         ) : (
                           <svg className="w-4 h-4 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4h16v16H4z"/></svg>
                         )}

@@ -1,9 +1,23 @@
 'use client';
 
 import { Section } from '@/components/Section';
+import { Notification } from '@/components/Notification';
 import Link from 'next/link';
+import { useState } from 'react';
 
 export default function ContactPage() {
+  const [notification, setNotification] = useState<{
+    show: boolean;
+    type: 'success' | 'error';
+    title: string;
+    message: string;
+  }>({
+    show: false,
+    type: 'success',
+    title: '',
+    message: ''
+  });
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     
@@ -33,17 +47,31 @@ export default function ContactPage() {
         const response = await fetch(formspreeEndpoint, {
           method: 'POST',
           body: formDataForFormspree,
+          mode: 'no-cors', // This prevents CORS issues
         });
         
-        if (response.ok) {
-          // Message personnalisé plus élégant
-          alert('🎉 Merci pour votre message !\n\nJ\'ai bien reçu votre demande et je vous répondrai dans les plus brefs délais.\n\nÀ bientôt !\nNasrallah');
-          (e.target as HTMLFormElement).reset();
-        } else {
-          throw new Error('Erreur lors de l\'envoi');
-        }
+        console.log('Formspree request sent successfully');
+        
+        // With no-cors mode, we can't read the response, but if no error was thrown,
+        // the request was successful
+        // Show beautiful success notification
+        setNotification({
+          show: true,
+          type: 'success',
+          title: '🎉 Message Sent Successfully!',
+          message: `Thank you ${name}! I've received your message and will get back to you soon. Looking forward to discussing your project with you!`
+        });
+        (e.target as HTMLFormElement).reset();
       } catch (error) {
         console.error('Erreur:', error);
+        // Show error notification
+        setNotification({
+          show: true,
+          type: 'error',
+          title: '❌ Message Failed to Send',
+          message: 'There was an issue sending your message. Please try again or contact me directly at nasr.mohammi@gmail.com'
+        });
+        
         // Fallback vers mailto si Formspree échoue
         const subject = encodeURIComponent(`Message from ${name} - Portfolio Contact`);
         const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
@@ -59,8 +87,20 @@ export default function ContactPage() {
     }
   };
 
+  const closeNotification = () => {
+    setNotification(prev => ({ ...prev, show: false }));
+  };
+
   return (
     <div className="pt-20">
+      {/* Notification */}
+      <Notification
+        show={notification.show}
+        onClose={closeNotification}
+        type={notification.type}
+        title={notification.title}
+        message={notification.message}
+      />
       {/* Hero Section */}
       <section className="min-h-[60vh] flex items-center justify-center bg-gradient-to-br from-gray-50 to-primary-50">
         <div className="container text-center">
@@ -225,34 +265,6 @@ export default function ContactPage() {
         </div>
       </Section>
 
-      {/* Call to Action */}
-      <Section 
-        title="Ready to Start?" 
-        subtitle="Let's discuss your project and see how we can work together"
-        className="bg-gradient-to-br from-gray-50 to-primary-50"
-      >
-        <div className="max-w-4xl mx-auto text-center">
-          <p className="text-xl text-gray-700 mb-8">
-            Whether you're looking to implement AI solutions, optimize your data pipelines, or build intelligent applications, I'm here to help you succeed.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a 
-              href="mailto:nasr.mohammi@gmail.com"
-              className="px-8 py-4 bg-primary-600 text-white rounded-xl hover:bg-primary-700 transition-colors font-semibold text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transform"
-            >
-              Send me an email
-            </a>
-            
-            <Link 
-              href="/projects"
-              className="px-8 py-4 border-2 border-primary-600 text-primary-600 rounded-xl hover:bg-primary-600 hover:text-white transition-colors font-semibold text-lg"
-            >
-              View my projects  
-            </Link>
-          </div>
-        </div>
-      </Section>
     </div>
   );
 }

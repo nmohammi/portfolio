@@ -8,9 +8,9 @@
     "description": "Led data analytics initiatives and built robust dbt pipelines for performance reporting across multiple business lines.",
     "technologies": ["dbt", "Snowflake", "AWS Redshift", "MicroStrategy", "Power BI"],
     "testimonial": {
-      "text": "Nasrallah demonstrated exceptional technical skills and analytical thinking during his time at Société Générale. His ability to design and implement complex data pipelines while mentoring junior team members was outstanding.",
+      "text": "I had great pleasure interacting with Nasrallah during his internship at Société Générale. I appreciated his ability to quickly propose relevant solutions to the issues raised in implementing KPIs (or other monitoring) for my department. His speed and rigor in their implementation as well as the quality of his follow-up (particularly to integrate all the \"small\" improvement requests for the reports he produced) greatly contributed to the rapid adoption and appropriation of these reports by the teams.",
       "author": "Gilles Hubschwerlin",
-      "position": "Quality and Performance Manager, Operations Directorate",
+      "position": "Quality and Performance Manager, Professional and Corporate Financing Division",
       "rating": 5,
       "source": "LinkedIn"
     },
@@ -25,9 +25,9 @@
     "description": "Implemented comprehensive cloud and AI infrastructure for secure healthcare data management and analytics.",
     "technologies": ["Microsoft Fabric", "Azure Data Factory", "Power BI Copilot", "GCP", "Qdrant"],
     "testimonial": {
-      "text": "Nasrallah's expertise in data analytics and cloud technologies was instrumental in transforming our data infrastructure. His professional approach and technical excellence made him a valuable team member.",
+      "text": "It's a pleasure working with Nasr. As a developer, he demonstrated great rigor throughout the project. He strictly adhered to the specifications, was proactive, and open to discussion. This allowed us to work in good collaboration. I highly recommend Nasr.",
       "author": "Jerome Filippone",
-      "position": "Head of Data",
+      "position": "Senior Clinical Data Ops Manager - Research & Development Advanced Master in Databases at CHU Metz",
       "rating": 5,
       "source": "LinkedIn"
     },

@@ -20,8 +20,13 @@ const companyLogoMap: Record<string, string> = {
 };
 
 function getPagePath(path: string): string {
-  // Add /portfolio prefix only in production
-  return `${process.env.NODE_ENV === 'production' ? '/portfolio' : ''}${path}`;
+  // Check if we're on GitHub Pages by looking at the current URL
+  if (typeof window !== 'undefined') {
+    const isGitHubPages = window.location.hostname === 'nmohammi.github.io' || window.location.pathname.startsWith('/portfolio');
+    return `${isGitHubPages ? '/portfolio' : ''}${path}`;
+  }
+  // Fallback for SSR - assume GitHub Pages
+  return `/portfolio${path}`;
 }
 
 function getImagePath(imagePath: string): string {

@@ -6,6 +6,20 @@ import projectsData from '@/data/projects.json'
 import Link from 'next/link'
 import Image from 'next/image'
 
+function getImagePath(imagePath: string): string {
+  // For subfolder images, we need to handle basePath manually
+  if (imagePath.startsWith('/education/') || imagePath.startsWith('/articles/')) {
+    // Check if we're on GitHub Pages by looking at the current URL
+    if (typeof window !== 'undefined') {
+      const isGitHubPages = window.location.hostname === 'nmohammi.github.io' || window.location.pathname.startsWith('/portfolio');
+      return `${isGitHubPages ? '/portfolio' : ''}${imagePath}`;
+    }
+    // Fallback for SSR - assume GitHub Pages
+    return `/portfolio${imagePath}`;
+  }
+  return imagePath;
+}
+
 export default function ProjectsPage() {
   const [selectedProject, setSelectedProject] = useState<number | null>(null)
   const detailedViewRef = useRef<HTMLDivElement>(null)
@@ -32,7 +46,7 @@ export default function ProjectsPage() {
         )
       case 2: // Climate Risk - Square Management logo
         return (
-          <Image src="/square.png" alt="Square Management" width={32} height={32} className="object-contain" unoptimized />
+          <Image src={getImagePath("/square.png")} alt="Square Management" width={32} height={32} className="object-contain" unoptimized />
         )
       case 3: // CAPM
         return (

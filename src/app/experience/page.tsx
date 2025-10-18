@@ -211,32 +211,10 @@ export default function ExperiencePage() {
               <TestimonialCard key={project.id} project={project} />
             ))}
           </div>
-          
-          {/* Stats Section */}
-          <div className="mt-16 bg-white rounded-3xl p-8 shadow-xl border border-gray-100">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
-              <div>
-                <div className="text-4xl font-bold text-primary-600 mb-2">4+</div>
-                <p className="text-gray-600 font-medium">Industries Served</p>
-              </div>
-              <div>
-                <div className="text-4xl font-bold text-primary-600 mb-2">15+</div>
-                <p className="text-gray-600 font-medium">Projects Completed</p>
-              </div>
-              <div>
-                <div className="text-4xl font-bold text-primary-600 mb-2">100%</div>
-                <p className="text-gray-600 font-medium">Client Satisfaction</p>
-              </div>
-              <div>
-                <div className="text-4xl font-bold text-primary-600 mb-2">70%</div>
-                <p className="text-gray-600 font-medium">Avg. Time Savings</p>
-              </div>
-            </div>
-          </div>
         </div>
       </Section>
 
-      {/* Skills Matrix */}
+      {/* Technical Expertise */}
       <Section 
         title="Technical Expertise" 
         subtitle="Technologies and skills developed across my career"
@@ -244,46 +222,118 @@ export default function ExperiencePage() {
       >
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="w-20 h-20 bg-gradient-to-br from-primary-500 to-primary-700 rounded-3xl flex items-center justify-center text-white font-bold text-2xl mx-auto mb-6">
-                AI/ML
+            {/* GenAI & Machine Learning */}
+            <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-8 border border-purple-200 flex flex-col h-full">
+              <div className="text-center mb-6">
+                <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-700 rounded-3xl flex items-center justify-center text-white font-bold text-2xl mx-auto mb-4">
+                  AI
+                </div>
+                <h3 className="text-xl font-bold text-gray-900">GenAI & Machine Learning</h3>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Artificial Intelligence</h3>
-              <ul className="text-gray-600 space-y-2">
-                <li>• Deep Learning (CNNs, RNNs)</li>
-                <li>• Natural Language Processing</li>
-                <li>• Computer Vision</li>
-                <li>• LLMs & Embeddings</li>
-                <li>• Vector Databases</li>
-              </ul>
+              <div className="flex-grow">
+                <div className="space-y-3">
+                  <div className="bg-white rounded-lg p-3 shadow-sm">
+                    <p className="text-sm font-medium text-gray-800">Deep Learning</p>
+                    <p className="text-xs text-gray-600">CNNs, RNNs, LSTM, Graph Neural Networks</p>
+                  </div>
+                  <div className="bg-white rounded-lg p-3 shadow-sm">
+                    <p className="text-sm font-medium text-gray-800">Natural Language Processing</p>
+                    <p className="text-xs text-gray-600">LLM Fine-tuning, RAG, Prompt Engineering</p>
+                  </div>
+                  <div className="bg-white rounded-lg p-3 shadow-sm">
+                    <p className="text-sm font-medium text-gray-800">Computer Vision</p>
+                    <p className="text-xs text-gray-600">image analysis, object detection, segmentation</p>
+                  </div>
+                  <div className="bg-white rounded-lg p-3 shadow-sm">
+                    <p className="text-sm font-medium text-gray-800">Vector Databases</p>
+                    <p className="text-xs text-gray-600">Pinecone, Qdrant, Weaviate, embeddings</p>
+                  </div>
+                  <div className="bg-white rounded-lg p-3 shadow-sm">
+                    <p className="text-sm font-medium text-gray-800">AI Agents & MCP</p>
+                    <p className="text-xs text-gray-600">intelligent automation, model control protocols</p>
+                  </div>
+                  <div className="bg-white rounded-lg p-3 shadow-sm">
+                    <p className="text-sm font-medium text-gray-800">Python ML Stack</p>
+                    <p className="text-xs text-gray-600">PyTorch, TensorFlow, Pandas, NumPy, Scikit-learn</p>
+                  </div>
+                </div>
+              </div>
             </div>
             
-            <div className="text-center">
-              <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-green-700 rounded-3xl flex items-center justify-center text-white font-bold text-2xl mx-auto mb-6">
-                Cloud
+            {/* Data Engineering & Analytics */}
+            <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 border border-blue-200 flex flex-col h-full">
+              <div className="text-center mb-6">
+                <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-700 rounded-3xl flex items-center justify-center text-white font-bold text-2xl mx-auto mb-4">
+                  Data
+                </div>
+                <h3 className="text-xl font-bold text-gray-900">Data Engineering & Analytics</h3>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Cloud & DevOps</h3>
-              <ul className="text-gray-600 space-y-2">
-                <li>• AWS & Azure</li>
-                <li>• Kubernetes</li>
-                <li>• Docker</li>
-                <li>• Apache Airflow</li>
-                <li>• dbt & Airbyte</li>
-              </ul>
+              <div className="flex-grow">
+                <div className="space-y-3">
+                  <div className="bg-white rounded-lg p-3 shadow-sm">
+                    <p className="text-sm font-medium text-gray-800">Data Pipelines</p>
+                    <p className="text-xs text-gray-600">dbt, Airbyte, Apache Airflow, ETL/ELT</p>
+                  </div>
+                  <div className="bg-white rounded-lg p-3 shadow-sm">
+                    <p className="text-sm font-medium text-gray-800">Cloud Data Warehouses</p>
+                    <p className="text-xs text-gray-600">Snowflake, AWS Redshift, BigQuery, CloudSQL</p>
+                  </div>
+                  <div className="bg-white rounded-lg p-3 shadow-sm">
+                    <p className="text-sm font-medium text-gray-800">Business Intelligence</p>
+                    <p className="text-xs text-gray-600">Power BI, Looker, MicroStrategy, Streamlit</p>
+                  </div>
+                  <div className="bg-white rounded-lg p-3 shadow-sm">
+                    <p className="text-sm font-medium text-gray-800">SQL & Analytics</p>
+                    <p className="text-xs text-gray-600">complex queries, performance optimization</p>
+                  </div>
+                  <div className="bg-white rounded-lg p-3 shadow-sm">
+                    <p className="text-sm font-medium text-gray-800">CI/CD & DevOps</p>
+                    <p className="text-xs text-gray-600">GitLab, Azure DevOps, automated deployments</p>
+                  </div>
+                  <div className="bg-white rounded-lg p-3 shadow-sm">
+                    <p className="text-sm font-medium text-gray-800">Data Visualization</p>
+                    <p className="text-xs text-gray-600">Excel, Google Sheets, interactive dashboards</p>
+                  </div>
+                </div>
+              </div>
             </div>
             
-            <div className="text-center">
-              <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-700 rounded-3xl flex items-center justify-center text-white font-bold text-2xl mx-auto mb-6">
-                Data
+            {/* Cloud & Production Systems */}
+            <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-8 border border-green-200 flex flex-col h-full">
+              <div className="text-center mb-6">
+                <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-green-700 rounded-3xl flex items-center justify-center text-white font-bold text-2xl mx-auto mb-4">
+                  Cloud
+                </div>
+                <h3 className="text-xl font-bold text-gray-900">Cloud & Production Systems</h3>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Data Engineering</h3>
-              <ul className="text-gray-600 space-y-2">
-                <li>• Python & FastAPI</li>
-                <li>• PostgreSQL & Redis</li>
-                <li>• Snowflake</li>
-                <li>• Analytics Pipelines</li>
-                <li>• Performance Optimization</li>
-              </ul>
+              <div className="flex-grow">
+                <div className="space-y-3">
+                  <div className="bg-white rounded-lg p-3 shadow-sm">
+                    <p className="text-sm font-medium text-gray-800">Google Cloud Platform</p>
+                    <p className="text-xs text-gray-600">Vertex AI, Cloud Run, GCS, CloudSQL</p>
+                  </div>
+                  <div className="bg-white rounded-lg p-3 shadow-sm">
+                    <p className="text-sm font-medium text-gray-800">Microsoft Azure</p>
+                    <p className="text-xs text-gray-600">Data Factory, Synapse, Databricks, Fabric</p>
+                  </div>
+                  <div className="bg-white rounded-lg p-3 shadow-sm">
+                    <p className="text-sm font-medium text-gray-800">Amazon Web Services</p>
+                    <p className="text-xs text-gray-600">Lambda, SageMaker, Redshift, S3</p>
+                  </div>
+                  <div className="bg-white rounded-lg p-3 shadow-sm">
+                    <p className="text-sm font-medium text-gray-800">Containerization</p>
+                    <p className="text-xs text-gray-600">Docker, Kubernetes, orchestration</p>
+                  </div>
+                  <div className="bg-white rounded-lg p-3 shadow-sm">
+                    <p className="text-sm font-medium text-gray-800">API Development</p>
+                    <p className="text-xs text-gray-600">FastAPI, FastMCP, REST APIs, Pydantic</p>
+                  </div>
+                  <div className="bg-white rounded-lg p-3 shadow-sm">
+                    <p className="text-sm font-medium text-gray-800">Monitoring & Observability</p>
+                    <p className="text-xs text-gray-600">OpenTelemetry, Redis, performance tracking</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

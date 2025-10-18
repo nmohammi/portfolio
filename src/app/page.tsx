@@ -32,14 +32,28 @@ function getPagePath(path: string): string {
 function getImagePath(imagePath: string): string {
   // For subfolder images, we need to handle basePath manually
   if (imagePath.startsWith('/education/') || imagePath.startsWith('/articles/')) {
-    return `${process.env.NODE_ENV === 'production' ? '/portfolio' : ''}${imagePath}`;
+    // Check if we're on GitHub Pages by looking at the current URL
+    if (typeof window !== 'undefined') {
+      const isGitHubPages = window.location.hostname === 'nmohammi.github.io' || window.location.pathname.startsWith('/portfolio');
+      return `${isGitHubPages ? '/portfolio' : ''}${imagePath}`;
+    }
+    // Fallback for SSR - assume GitHub Pages
+    return `/portfolio${imagePath}`;
   }
   return imagePath;
 }
 
 function getCompanyLogo(company: string): string | undefined {
   for (const [key, path] of Object.entries(companyLogoMap)) {
-    if (company.includes(key)) return path;
+    if (company.includes(key)) {
+      // Check if we're on GitHub Pages by looking at the current URL
+      if (typeof window !== 'undefined') {
+        const isGitHubPages = window.location.hostname === 'nmohammi.github.io' || window.location.pathname.startsWith('/portfolio');
+        return `${isGitHubPages ? '/portfolio' : ''}${path}`;
+      }
+      // Fallback for SSR - assume GitHub Pages
+      return `/portfolio${path}`;
+    }
   }
   return undefined;
 }
@@ -53,48 +67,19 @@ export default function Home() {
     const email = formData.get('email') as string;
     const message = formData.get('message') as string;
     
-    // Vérifier si Formspree est configuré
-    const formspreeEndpoint = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT;
+    // Use mailto as the primary method since Formspree is not configured
+    const subject = encodeURIComponent(`Message from ${name} - Portfolio Contact`);
+    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+    const mailtoLink = `mailto:nasr.mohammi@gmail.com?subject=${subject}&body=${body}`;
     
-    if (formspreeEndpoint) {
-      try {
-        // Utiliser directement le FormData du formulaire
-        const formDataForFormspree = new FormData();
-        formDataForFormspree.append('name', name || '');
-        formDataForFormspree.append('email', email || '');
-        formDataForFormspree.append('message', message || '');
-        formDataForFormspree.append('_subject', `Message from ${name || 'Anonymous'} - Portfolio Contact`);
-        
-        // Debug: vérifier les valeurs
-        console.log('Sending to Formspree:', { name, email, message });
-        
-        const response = await fetch(formspreeEndpoint, {
-          method: 'POST',
-          body: formDataForFormspree,
-        });
-        
-        if (response.ok) {
-          // Message personnalisé plus élégant
-          alert('🎉 Merci pour votre message !\n\nJ\'ai bien reçu votre demande et je vous répondrai dans les plus brefs délais.\n\nÀ bientôt !\nNasrallah');
-          (e.target as HTMLFormElement).reset();
-        } else {
-          throw new Error('Erreur lors de l\'envoi');
-        }
-      } catch (error) {
-        console.error('Erreur:', error);
-        // Fallback vers mailto si Formspree échoue
-        const subject = encodeURIComponent(`Message from ${name} - Portfolio Contact`);
-        const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
-        const mailtoLink = `mailto:nasr.mohammi@gmail.com?subject=${subject}&body=${body}`;
-        window.location.href = mailtoLink;
-      }
-    } else {
-      // Utiliser mailto comme fallback
-      const subject = encodeURIComponent(`Message from ${name} - Portfolio Contact`);
-      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
-      const mailtoLink = `mailto:nasr.mohammi@gmail.com?subject=${subject}&body=${body}`;
-      window.location.href = mailtoLink;
-    }
+    // Open mailto link
+    window.location.href = mailtoLink;
+    
+    // Show success message
+    alert('🎉 Thank you for your message!\n\nYour default email client should open with a pre-filled message. If it doesn\'t open automatically, please send your message to: nasr.mohammi@gmail.com\n\nI\'ll get back to you as soon as possible!\n\nBest regards,\nNasrallah');
+    
+    // Reset form
+    (e.target as HTMLFormElement).reset();
   };
 
   return (

@@ -155,7 +155,7 @@ export default function Home() {
                 <div className="relative overflow-hidden p-8 rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 shadow-sm">
                   <div className="pointer-events-none absolute -inset-1 bg-gradient-to-r from-primary-500/10 via-primary-500/0 to-primary-500/10" aria-hidden="true" />
                   <h3 className="relative text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6 text-center">Impact</h3>
-                  <div className="relative grid grid-cols-2 md:grid-cols-4 gap-6">
+                  <div className="relative grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
                     <div className="text-center">
                       <div className="mx-auto mb-2 h-12 w-12 rounded-2xl bg-primary-50 dark:bg-primary-900/20 flex items-center justify-center text-primary-700 dark:text-primary-300">
                         {/* calendar check */}
@@ -937,7 +937,7 @@ export default function Home() {
                 {/* Dot with logo centered on rail */}
                 <div className="absolute left-6 -translate-x-1/2 transform mt-1 w-10 h-10 rounded-full bg-white border-2 border-primary-300 shadow flex items-center justify-center">
                   {edu.logo ? (
-                    <Image src={getImagePath(edu.logo as string)} alt={`${edu.institution} logo`} width={32} height={32} className="object-contain" />
+                    <Image src={getImagePath(edu.logo as string)} alt={`${edu.institution} logo`} width={32} height={32} className="object-contain" unoptimized />
                   ) : (
                     <span className="text-primary-600 font-bold">{index + 1}</span>
                   )}
@@ -949,7 +949,7 @@ export default function Home() {
                     <div className="flex items-center gap-2 mb-1">
                       {edu.logo && (
                         <div className="w-6 h-6 rounded-md overflow-hidden bg-white border border-gray-100 flex items-center justify-center">
-                          <Image src={getImagePath(edu.logo as string)} alt={`${edu.institution} logo`} width={20} height={20} className="object-contain" />
+                          <Image src={getImagePath(edu.logo as string)} alt={`${edu.institution} logo`} width={20} height={20} className="object-contain" unoptimized />
                         </div>
                       )}
                       <p className="text-primary-600 font-medium">{edu.institution}</p>

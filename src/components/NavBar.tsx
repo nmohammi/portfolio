@@ -149,7 +149,7 @@ const NavBar: React.FC = () => {
           />
           <div
             data-mobile-drawer
-            className="fixed top-0 right-0 bottom-0 w-80 max-w-[85%] bg-white dark:bg-gray-900 shadow-xl border-l border-gray-200 dark:border-gray-800 p-6 flex flex-col gap-2"
+            className="fixed top-0 right-0 bottom-0 w-full max-w-sm bg-white dark:bg-gray-900 shadow-xl border-l border-gray-200 dark:border-gray-800 p-6 flex flex-col gap-2"
           >
             <div className="flex items-center justify-between mb-4">
               <span className="text-lg font-semibold text-gray-900 dark:text-gray-100">Menu</span>

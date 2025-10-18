@@ -19,6 +19,11 @@ const companyLogoMap: Record<string, string> = {
   'ETIS': './etis.png',
 };
 
+function getPagePath(path: string): string {
+  // Add /portfolio prefix only in production
+  return `${process.env.NODE_ENV === 'production' ? '/portfolio' : ''}${path}`;
+}
+
 function getImagePath(imagePath: string): string {
   // For subfolder images, we need to handle basePath manually
   if (imagePath.startsWith('/education/') || imagePath.startsWith('/articles/')) {
@@ -383,7 +388,7 @@ export default function Home() {
                     {/* View Details Button */}
                     <div className="flex justify-center mb-4">
                       <a 
-                        href="/experience"
+                        href={getPagePath('/experience')}
                         className="inline-flex items-center px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors text-sm font-medium"
                       >
                         <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -426,7 +431,7 @@ export default function Home() {
         
         <div className="text-center mt-12">
           <a 
-            href="/experience"
+            href={getPagePath('/experience')}
             className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-2xl hover:from-primary-700 hover:to-primary-800 transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transform"
           >
             View Full Experience
@@ -452,7 +457,7 @@ export default function Home() {
         
         <div className="text-center mt-12">
           <a 
-            href="/articles"
+            href={getPagePath('/articles')}
             className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-2xl hover:from-primary-700 hover:to-primary-800 transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transform"
           >
             View All Articles
@@ -518,7 +523,7 @@ export default function Home() {
         
         <div className="text-center mt-12">
           <a 
-            href="/projects"
+            href={getPagePath('/projects')}
             className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-2xl hover:from-primary-700 hover:to-primary-800 transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transform"
           >
             View All Projects
@@ -601,7 +606,7 @@ export default function Home() {
           
           <div className="text-center mt-8">
             <a 
-              href="/experience"
+              href={getPagePath('/experience')}
               className="inline-flex items-center px-6 py-3 bg-white text-primary-600 rounded-xl hover:bg-primary-50 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl border border-primary-200"
             >
               View All Client Testimonials
@@ -925,7 +930,7 @@ export default function Home() {
       {/* Education Section */}
       <Section 
         id="education" 
-        title="Certifications & Education" 
+        title="Education" 
         subtitle="My academic background and professional certifications"
         className="bg-gradient-to-br from-gray-50 to-white"
       >
@@ -969,7 +974,7 @@ export default function Home() {
 
         <div className="text-center mt-12">
           <a 
-            href="/education"
+            href={getPagePath('/education')}
             className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-2xl hover:from-primary-700 hover:to-primary-800 transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transform"
           >
             View Full Education

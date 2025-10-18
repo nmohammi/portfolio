@@ -19,11 +19,12 @@ const companyLogoMap: Record<string, string> = {
   'ETIS': './etis.png',
 };
 
-function getCompanyLogo(company: string): string | undefined {
-  for (const [key, path] of Object.entries(companyLogoMap)) {
-    if (company.includes(key)) return path;
+function getImagePath(imagePath: string): string {
+  // For subfolder images, we need to handle basePath manually
+  if (imagePath.startsWith('/education/') || imagePath.startsWith('/articles/')) {
+    return `${process.env.NODE_ENV === 'production' ? '/portfolio' : ''}${imagePath}`;
   }
-  return undefined;
+  return imagePath;
 }
 
 export default function Home() {
@@ -929,7 +930,7 @@ export default function Home() {
                 {/* Dot with logo centered on rail */}
                 <div className="absolute left-6 -translate-x-1/2 transform mt-1 w-10 h-10 rounded-full bg-white border-2 border-primary-300 shadow flex items-center justify-center">
                   {edu.logo ? (
-                    <Image src={edu.logo as string} alt={`${edu.institution} logo`} width={32} height={32} className="object-contain" />
+                    <Image src={getImagePath(edu.logo as string)} alt={`${edu.institution} logo`} width={32} height={32} className="object-contain" />
                   ) : (
                     <span className="text-primary-600 font-bold">{index + 1}</span>
                   )}
@@ -941,7 +942,7 @@ export default function Home() {
                     <div className="flex items-center gap-2 mb-1">
                       {edu.logo && (
                         <div className="w-6 h-6 rounded-md overflow-hidden bg-white border border-gray-100 flex items-center justify-center">
-                          <Image src={edu.logo as string} alt={`${edu.institution} logo`} width={20} height={20} className="object-contain" />
+                          <Image src={getImagePath(edu.logo as string)} alt={`${edu.institution} logo`} width={20} height={20} className="object-contain" />
                         </div>
                       )}
                       <p className="text-primary-600 font-medium">{edu.institution}</p>

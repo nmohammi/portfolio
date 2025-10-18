@@ -4,7 +4,7 @@
     "degree": "Engineer’s Degree, Computer Science & Applied Mathematics",
     "institution": "National Institute of Technology of Bordeaux – ENSEIRB‑MATMECA",
     "period": "Sep 2021 – Aug 2024",
-    "logo": "./education/enseirb.png",
+    "logo": "/education/enseirb.png",
     "description": "Relevant coursework: \n • Applied Deep Learning (neural networks, CNNs, RNNs, transformers)\n • Probabilistic Methods & Statistical Inference\n • Optimization Techniques (convex optimization, gradient methods, large‑scale systems)\n • Big Data & Data Engineering (distributed systems: Hadoop, Spark; data pipelines, MLOps)\n • Reinforcement Learning & Decision Making\n • Computer Vision (image analysis, object detection, segmentation)\n • Time Series & Stochastic Processes (forecasting, sequential modeling)\n • Signal Processing (neural methods for audio/vision)"
   },
   {
@@ -12,7 +12,7 @@
     "degree": "Master IREF – Economic Risks & Data Science (Double Degree)",
     "institution": "Master IREF, University of Bordeaux",
     "period": "Sep 2023 – Aug 2024",
-    "logo": "./education/iref.png",
+    "logo": "/education/iref.png",
     "description": "Specialization: ERDS – Economic Risks & Data Science.\nRelevant coursework: \n • Machine Learning (supervised/unsupervised, deep learning, reinforcement learning)\n • Big Data Analytics (distributed systems, Spark, Hadoop, MapReduce)\n • Econometrics & Big‑Data Econometrics (panel/time‑series, causal inference, high‑dimensional ML for econometrics)\n • Mathematics for Data Science (linear algebra, optimization, probability)\n • Programming & Data Management (Python, R, SQL, data pipelines, databases)\n • Stochastic Processes & Time‑Series Analysis (forecasting, Markov models, multivariate series)\n • NLP / Computer Vision"
   },
   {
@@ -20,7 +20,7 @@
     "degree": "CPGE – Mathematics & Physics (MPSI/MP*)",
     "institution": "CPGE Lycée Moulay Idriss",
     "period": "Sep 2019 – Jul 2021",
-    "logo": "./education/mlyidriss.jpeg",
+    "logo": "/education/mlyidriss.jpeg",
     "description": "Intensive two‑year program in mathematics and physics preparing for the French engineering schools competitive exams.\nRelevant coursework: \n • Advanced Mathematics (linear algebra, multivariable calculus, vector spaces, differential equations)\n • Algorithms & Data Structures\n • Optimization (convex optimization, Lagrange multipliers)\n • Discrete Mathematics & Graph Theory\n • Stochastic Processes (Markov chains, Poisson processes)\n • Discrete & Continuous Probability\n • Metric & Topological Spaces\n • Programming Projects (Python, SQL)"
   }
 ]

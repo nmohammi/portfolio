@@ -1,6 +1,14 @@
 import React from 'react';
 import Image from 'next/image';
 
+function getImagePath(imagePath: string): string {
+  // For subfolder images, we need to handle basePath manually
+  if (imagePath.startsWith('/education/') || imagePath.startsWith('/articles/')) {
+    return `${process.env.NODE_ENV === 'production' ? '/portfolio' : ''}${imagePath}`;
+  }
+  return imagePath;
+}
+
 interface ArticleCardProps {
   article: {
     id: number;
@@ -23,7 +31,7 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({ article, featured = fa
         {article.image && (
           <div className="mb-4 -mt-2 rounded-lg overflow-hidden">
             <Image
-              src={article.image}
+              src={getImagePath(article.image)}
               alt={article.title}
               width={800}
               height={450}

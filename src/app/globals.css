@@ -8,7 +8,9 @@
   }
   
   body {
-    @apply bg-gray-50 text-gray-900 dark:bg-gray-950 dark:text-gray-100;
+    @apply bg-gray-50 text-gray-900;
+    /* Ensure good contrast on all devices */
+    color-scheme: light;
   }
 
   /* Accessible focus outlines */
@@ -55,5 +57,19 @@
 @layer components {
   .container {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  /* Mobile text improvements */
+  @media (max-width: 768px) {
+    body {
+      /* Force light mode on mobile for better readability */
+      background-color: #f9fafb !important;
+      color: #111827 !important;
+    }
+    
+    /* Ensure all text elements have good contrast */
+    h1, h2, h3, h4, h5, h6, p, span, div {
+      color: #111827 !important;
+    }
   }
 }

@@ -34,7 +34,10 @@ export default function ExperiencePage() {
 
   function getCompanyLogo(company: string): string | undefined {
     for (const [key, path] of Object.entries(companyLogoMap)) {
-      if (company.includes(key)) return path;
+      if (company.includes(key)) {
+        // Handle basePath for production
+        return `${process.env.NODE_ENV === 'production' ? '/portfolio' : ''}${path}`;
+      }
     }
     return undefined;
   }
